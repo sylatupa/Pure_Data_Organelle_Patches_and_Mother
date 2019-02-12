@@ -1,0 +1,20 @@
+#0,5,10,15,20,25,30,35,40,45,50,55 * * * * /usr/bin/python /home/pi/Documents/PROJECTS/HOME_AUTO/HA_serial_Read.py >> /home/pi/Documents/PROJECTS/HOME_AUTO/logs/serial.log 2>&1
+#1,6,11,16,21,26,31,36,41,46,51,56 * * * * /usr/bin/python /home/pi/Documents/PROJECTS/HOME_AUTO/HA_visual.py >> /home/pi/Documents/PROJECTS/HOME_AUTO/logs/visual.log 2>&1
+#1,16,31,46 * * * * /usr/bin/python /home/pi/Documents/PROJECTS/HOME_AUTO/HA_post.py >> /home/pi/Documents/PROJECTS/HOME_AUTO/logs/post.log 2>&1
+
+#0,15,30,45 * * * * /usr/bin/python /home/pi/Documents/PROJECTS/HOME_AUTO/HA_chime.py >> /home/pi/Documents/PROJECTS/HOME_AUTO/logs/personalityChime.log 2>&1
+
+#*/1 * * * * /usr/bin/python /home/pi/Documents/PROJECTS/HOME_AUTO/HA_matrix.py
+
+#*/1 * * * * /usr/bin/python /home/pi/Documents/PROJECTS/HOME_AUTO/HA_getHomeState.py
+#*/1 * * * * /usr/bin/python /home/pi/Documents/PROJECTS/HOME_AUTO/HA_thermostat.py
+@reboot echo $HOME
+@reboot echo $HOME
+@reboot echo $HOME
+#@reboot /bin/sleep 35; /usr/bin/python /home/pi/Documents/PROJECTS/HOME_AUTO/HA_serial_Read.py & >> /home/pi/Documents/PROJECTS/HOME_AUTO/logs/serialBoot.log 2>&1
+#@reboot /bin/sleep 25 ; /usr/bin/python /home/pi/Documents/PROJECTS/HOME_AUTO/HA_matrix.py
+#@reboot /bin/sleep 37 ; /usr/bin/python /home/pi/Documents/PROJECTS/HOME_AUTO/HA_visual.py & >> /home/pi/Documents/PROJECTS/HOME_AUTO/logs/visualBoot.log 2>&1
+@reboot $HOME/spiPi/venv/bin/python $HOME/spiPi/spectrideo.py
+#@reboot /bin/sleep 10;python /home/pi/GIT_AUTOMATION/ipSync.py "spypi" &
+#
+#minute(0-59) hour(0-23) day(1-31) month(1-12) weekday(0-6) command
