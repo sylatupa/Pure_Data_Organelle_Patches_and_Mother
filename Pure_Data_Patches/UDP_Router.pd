@@ -1,4 +1,4 @@
-#N canvas 67 171 1317 476 16;
+#N canvas 67 171 1317 604 16;
 #X obj 789 399 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 833 404 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -40,6 +40,7 @@ the messages from the MQTT publishers on the network.;
 #X obj 996 300 s knob2;
 #X obj 1087 295 s knob3;
 #X obj 1172 300 s knob4;
+#X obj 669 377 print;
 #X connect 4 0 10 0;
 #X connect 8 0 0 0;
 #X connect 8 1 1 0;
@@ -50,6 +51,7 @@ the messages from the MQTT publishers on the network.;
 #X connect 10 0 11 0;
 #X connect 10 1 11 1;
 #X connect 11 0 12 0;
+#X connect 11 0 28 0;
 #X connect 12 0 8 0;
 #X connect 12 0 15 0;
 #X connect 12 0 21 0;
