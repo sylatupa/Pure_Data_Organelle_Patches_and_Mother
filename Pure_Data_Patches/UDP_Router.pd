@@ -1,72 +1,121 @@
-#N canvas 67 171 1317 604 16;
-#X obj 789 399 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#N canvas 67 56 1533 844 16;
+#X obj 1239 504 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 833 404 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1283 509 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 873 405 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1323 510 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 931 397 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1381 502 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 644 236 netreceive 3000 1;
-#X obj 398 270 print topic_payload;
-#X obj 989 398 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1427 409 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text 215 29 take udp messages hitting this computer on port 3000
+#X text 26 12 take udp messages hitting this computer on port 3000
 route to appropriate function route is determined by mqtt messages
 being sent from node-red. Node-Red is being hosted on a local network
 and this patch is also on the network \, on a pi independent of node-red
 server. The node-red server also has the MQTT broker that is receiving
 the messages from the MQTT publishers on the network.;
-#X obj 722 374 route up down left right test test3;
-#X obj 1037 398 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1154 471 route up down left right test test3;
+#X obj 1475 409 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 683 267 unpack s 0;
-#X obj 711 298 pack s 0;
-#X msg 718 335 \$1 \$2 \;;
-#X obj 347 487 s notes;
-#X obj 346 456 pack 11 100;
-#X obj 276 307 route notein;
-#X obj 229 353 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 770 330 unpack s 0;
+#X obj 769 382 pack s 0;
+#X msg 762 416 \$1 \$2 \;;
+#X obj 643 471 route notein;
+#X obj 814 476 route knob1 knob2 knob3 knob4;
+#X obj 797 509 s knob1;
+#X obj 885 512 s knob2;
+#X obj 976 507 s knob3;
+#X obj 1061 512 s knob4;
+#X obj 614 509 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X msg 277 338 \$1 \;;
-#X obj 533 411 pack 11 100;
-#X obj 490 360 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 646 542 + 100;
+#X floatatom 703 504 5 0 0 0 - - -, f 5;
+#N canvas 67 89 1365 496 noteOnAndOff 0;
+#X msg 220 36 \$1 \;;
+#X obj 110 154 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X msg 528 371 \$1 \;;
-#X obj 527 340 route vol;
-#X obj 534 442 s vol;
-#X obj 922 240 route knob1 knob2 knob3 knob4;
-#X obj 908 297 s knob1;
-#X obj 996 300 s knob2;
-#X obj 1087 295 s knob3;
-#X obj 1172 300 s knob4;
-#X obj 669 377 print;
-#X obj 332 398 + 100;
-#X connect 4 0 10 0;
-#X connect 8 0 0 0;
-#X connect 8 1 1 0;
-#X connect 8 2 2 0;
-#X connect 8 3 3 0;
-#X connect 8 4 6 0;
-#X connect 8 5 9 0;
-#X connect 10 0 11 0;
-#X connect 10 1 11 1;
-#X connect 11 0 12 0;
-#X connect 11 0 28 0;
-#X connect 12 0 8 0;
-#X connect 12 0 15 0;
-#X connect 12 0 21 0;
-#X connect 12 0 23 0;
+#X msg 282 287 \$1 100 \;;
+#X msg 132 244 \$1 0 \;, f 8;
+#X msg 279 352 112 100;
+#X msg 276 322 set \$1 \$2;
+#X obj 180 43 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 178 74 t b b f;
+#X msg 121 290 set \$1 \$2;
+#X msg 125 330 112 0;
+#X obj 209 226 + 1;
+#X floatatom 454 153 5 0 0 0 - - -, f 5;
+#X obj 151 159 delay 200 1 msec;
+#X msg 77 57 111;
+#X obj 82 19 inlet;
+#X obj 227 420 outlet;
+#X connect 0 0 7 0;
+#X connect 2 0 5 0;
+#X connect 3 0 8 0;
+#X connect 4 0 15 0;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 7 0 12 0;
+#X connect 7 1 4 0;
+#X connect 7 2 10 0;
+#X connect 8 0 9 0;
+#X connect 9 0 15 0;
+#X connect 10 0 3 0;
+#X connect 10 0 2 0;
+#X connect 11 0 10 1;
+#X connect 12 0 1 0;
+#X connect 12 0 9 0;
+#X connect 13 0 0 0;
 #X connect 14 0 13 0;
-#X connect 15 0 17 0;
-#X connect 15 0 16 0;
-#X connect 17 0 29 0;
-#X connect 18 0 22 0;
-#X connect 20 0 14 1;
-#X connect 21 0 20 0;
-#X connect 21 0 19 0;
-#X connect 23 0 24 0;
-#X connect 23 1 25 0;
-#X connect 23 2 26 0;
-#X connect 23 3 27 0;
-#X connect 29 0 14 0;
+#X restore 878 633 pd noteOnAndOff;
+#X msg 647 572 \$1 100 \;;
+#X obj 649 612 s notes;
+#X obj 645 504 int;
+#X obj 810 151 netreceive 8200 1;
+#X obj 884 196 print;
+#X msg 1000 416 -0.569157;
+#X obj 750 207 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 49 243 0 4 Frame \, Time \, Varsha_Hip \, Varsha_Hip \, Varsha_Hip
+\, 5 Varsha_Ab \, Varsha_Ab \, Varsha_Ab \, 8 Varsha_Chest \, Varsha_Chest
+\, Varsha_Chest \, 11 Varsha_Neck \, Varsha_Neck \, Varsha_Neck \,
+14 Varsha_Head \, Varsha_Head \, Varsha_Head \, 17 Varsha_LShoulder
+\, Varsha_LShoulder \, Varsha_LShoulder \, 20 Varsha_LUArm \, Varsha_LUArm
+\, Varsha_LUArm \, 23 Varsha_LFArm \, Varsha_LFArm \, Varsha_LFArm
+\, 27 Varsha_LHand \, Varsha_LHand \, Varsha_LHand \, 30 Varsha_RShoulder
+\, Varsha_RShoulder \, Varsha_RShoulder \, 33 Varsha_RUArm \, Varsha_RUArm
+\, Varsha_RUArm \, 36 Varsha_RFArm \, Varsha_RFArm \, Varsha_RFArm
+\, 39 Varsha_RHand \, Varsha_RHand \, Varsha_RHand \, 42 Varsha_LThigh
+\, Varsha_LThigh \, Varsha_LThigh \, 45 Varsha_LShin \, Varsha_LShin
+\, Varsha_LShin \, 48 Varsha_LFoot \, Varsha_LFoot \, Varsha_LFoot
+\, 51 Varsha_RThigh \, Varsha_RThigh \, Varsha_RThigh \, 54 Varsha_RShin
+\, Varsha_RShin \, Varsha_RShin \, 57 Varsha_RFoot \, Varsha_RFoot
+\, Varsha_RFoot, f 70;
+#X msg 1044 337 set \$59;
+#X connect 6 0 0 0;
+#X connect 6 1 1 0;
+#X connect 6 2 2 0;
+#X connect 6 3 3 0;
+#X connect 6 4 4 0;
+#X connect 6 5 7 0;
+#X connect 8 0 9 0;
+#X connect 8 1 9 1;
+#X connect 9 0 10 0;
+#X connect 10 0 6 0;
+#X connect 10 0 11 0;
+#X connect 10 0 12 0;
+#X connect 11 0 17 0;
+#X connect 11 0 23 0;
+#X connect 12 0 13 0;
+#X connect 12 1 14 0;
+#X connect 12 2 15 0;
+#X connect 12 3 16 0;
+#X connect 18 0 21 0;
+#X connect 19 0 18 1;
+#X connect 21 0 22 0;
+#X connect 23 0 18 0;
+#X connect 24 0 25 0;
+#X connect 24 0 27 0;
+#X connect 24 0 29 0;
+#X connect 29 0 26 0;
