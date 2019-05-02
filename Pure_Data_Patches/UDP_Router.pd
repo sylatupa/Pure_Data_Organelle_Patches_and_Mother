@@ -1,36 +1,4 @@
-#N canvas 67 56 1533 844 16;
-#X obj 1239 504 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 1283 509 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 1323 510 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 1381 502 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 1427 409 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X text 26 12 take udp messages hitting this computer on port 3000
-route to appropriate function route is determined by mqtt messages
-being sent from node-red. Node-Red is being hosted on a local network
-and this patch is also on the network \, on a pi independent of node-red
-server. The node-red server also has the MQTT broker that is receiving
-the messages from the MQTT publishers on the network.;
-#X obj 1154 471 route up down left right test test3;
-#X obj 1475 409 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 770 330 unpack s 0;
-#X obj 769 382 pack s 0;
-#X msg 762 416 \$1 \$2 \;;
-#X obj 643 471 route notein;
-#X obj 814 476 route knob1 knob2 knob3 knob4;
-#X obj 797 509 s knob1;
-#X obj 885 512 s knob2;
-#X obj 976 507 s knob3;
-#X obj 1061 512 s knob4;
-#X obj 614 509 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 646 542 + 100;
-#X floatatom 703 504 5 0 0 0 - - -, f 5;
+#N canvas 1600 60 1024 708 16;
 #N canvas 67 89 1365 496 noteOnAndOff 0;
 #X msg 220 36 \$1 \;;
 #X obj 110 154 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -68,54 +36,180 @@ the messages from the MQTT publishers on the network.;
 #X connect 12 0 9 0;
 #X connect 13 0 0 0;
 #X connect 14 0 13 0;
-#X restore 878 633 pd noteOnAndOff;
-#X msg 647 572 \$1 100 \;;
-#X obj 649 612 s notes;
-#X obj 645 504 int;
-#X obj 810 151 netreceive 8200 1;
-#X obj 884 196 print;
-#X msg 1000 416 -0.569157;
-#X obj 750 207 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X restore 792 831 pd noteOnAndOff;
+#X obj 164 330 netreceive 8200 1;
+#X obj 141 330 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text 49 243 0 4 Frame \, Time \, Varsha_Hip \, Varsha_Hip \, Varsha_Hip
-\, 5 Varsha_Ab \, Varsha_Ab \, Varsha_Ab \, 8 Varsha_Chest \, Varsha_Chest
-\, Varsha_Chest \, 11 Varsha_Neck \, Varsha_Neck \, Varsha_Neck \,
-14 Varsha_Head \, Varsha_Head \, Varsha_Head \, 17 Varsha_LShoulder
-\, Varsha_LShoulder \, Varsha_LShoulder \, 20 Varsha_LUArm \, Varsha_LUArm
-\, Varsha_LUArm \, 23 Varsha_LFArm \, Varsha_LFArm \, Varsha_LFArm
-\, 27 Varsha_LHand \, Varsha_LHand \, Varsha_LHand \, 30 Varsha_RShoulder
-\, Varsha_RShoulder \, Varsha_RShoulder \, 33 Varsha_RUArm \, Varsha_RUArm
-\, Varsha_RUArm \, 36 Varsha_RFArm \, Varsha_RFArm \, Varsha_RFArm
-\, 39 Varsha_RHand \, Varsha_RHand \, Varsha_RHand \, 42 Varsha_LThigh
-\, Varsha_LThigh \, Varsha_LThigh \, 45 Varsha_LShin \, Varsha_LShin
-\, Varsha_LShin \, 48 Varsha_LFoot \, Varsha_LFoot \, Varsha_LFoot
-\, 51 Varsha_RThigh \, Varsha_RThigh \, Varsha_RThigh \, 54 Varsha_RShin
-\, Varsha_RShin \, Varsha_RShin \, 57 Varsha_RFoot \, Varsha_RFoot
-\, Varsha_RFoot, f 70;
-#X msg 1044 337 set \$59;
-#X connect 6 0 0 0;
-#X connect 6 1 1 0;
-#X connect 6 2 2 0;
-#X connect 6 3 3 0;
-#X connect 6 4 4 0;
-#X connect 6 5 7 0;
-#X connect 8 0 9 0;
-#X connect 8 1 9 1;
-#X connect 9 0 10 0;
-#X connect 10 0 6 0;
-#X connect 10 0 11 0;
+#X obj 62 390 s n;
+#X obj 266 388 s y;
+#X obj 364 388 s z;
+#X obj 66 478 tabwrite x;
+#X obj 135 452 r n;
+#X obj 66 452 r x;
+#X obj 198 452 r y;
+#X obj 326 449 r z;
+#X obj 198 478 tabwrite y;
+#X obj 326 475 tabwrite z;
+#X obj 282 444 r n;
+#X obj 402 441 r n;
+#X obj 1518 197 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 125 727 s x;
+#X obj 176 727 s y;
+#X obj 231 727 s z;
+#X obj 286 727 s xsmooth;
+#X obj 393 727 s ysmooth;
+#X obj 499 727 s zsmooth;
+#X obj 611 672 0;
+#X obj 875 584 1;
+#X obj 801 598 + 1, f 4;
+#X obj 583 617 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 623 580 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 722 617 0;
+#X obj 597 726 s mag;
+#X obj 654 727 s vel;
+#X obj 708 727 s accel;
+#X obj 790 727 s jerked;
+#X obj 880 727 s snapped;
+#X obj 980 727 s cracked;
+#X obj 63 330 s newN;
+#X floatatom 932 618 5 0 0 0 - - -, f 5;
+#X obj 945 515 + 1;
+#X obj 875 515 0;
+#X floatatom 801 573 5 0 0 0 - - -, f 5;
+#X msg 922 573 0;
+#X obj 875 567 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 120 53 s notes, f 9;
+#X obj 305 94 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 343 330 r n;
+#X floatatom 388 330 5 0 0 0 - - -, f 5;
+#X obj 22 -16 int;
+#X obj 106 3 pack \$1 100;
+#X obj 605 62 s knob1;
+#X obj 1095 671 1;
+#X obj 1055 672 + 1, f 4;
+#X obj 1055 646 0;
+#X obj 1165 520 r newN;
+#X floatatom 1129 732 5 0 0 0 - - -, f 5;
+#X obj 1245 580 + 1;
+#X obj 1169 585 0;
+#X floatatom 1095 646 5 0 0 0 - - -, f 5;
+#X msg 1226 682 0;
+#X obj 1166 682 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 868 648 s n;
+#X obj 504 62 s knob3;
+#X obj 737 62 s clear;
+#X obj 538 580 r clear;
+#X obj 740 -68 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 111 107 Tabular Arrays, f 15;
+#X text 744 -23 Toggle on until data clear, f 12;
+#X text 415 -42 Send Smoothed data to synth;
+#X text 64 417 Write the sent data to a tabular Arrays., f 80;
+#X obj 1114 777 s n;
+#X msg 1100 471 0;
+#X floatatom 35 44 5 0 0 0 - - -, f 5;
+#X msg 305 15 68 0;
+#X msg 313 -33 set \$1 0;
+#X obj 611 646 metro 11;
+#X obj 63 356 route n x y z, f 45;
+#X text 60 272 Recieve UDP data on Port 8200 route each message by
+the key and then sending the value \, like ('x .42'), f 80;
+#X obj 502 -68 r y;
+#X obj 603 -68 r x;
+#X obj 897 -71 r z;
+#X obj 899 59 s knob2;
+#X obj 167 -82 t b i b i;
+#X obj 621 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 198 -31 delay 100;
+#X obj 71 -110 r x;
+#X obj 1169 611 select 0 2;
+#X obj 162 405 s x;
+#X obj 875 541 select 0 2;
+#X floatatom 110 -81 5 0 0 0 - - -, f 5;
+#X obj 38 -76 * 255;
+#X connect 1 0 2 0;
+#X connect 1 0 73 0;
+#X connect 2 0 34 0;
+#X connect 7 0 6 1;
+#X connect 8 0 6 0;
+#X connect 9 0 11 0;
 #X connect 10 0 12 0;
-#X connect 11 0 17 0;
-#X connect 11 0 23 0;
-#X connect 12 0 13 0;
-#X connect 12 1 14 0;
-#X connect 12 2 15 0;
-#X connect 12 3 16 0;
-#X connect 18 0 21 0;
-#X connect 19 0 18 1;
-#X connect 21 0 22 0;
-#X connect 23 0 18 0;
-#X connect 24 0 25 0;
-#X connect 24 0 27 0;
-#X connect 24 0 29 0;
-#X connect 29 0 26 0;
+#X connect 13 0 11 1;
+#X connect 14 0 12 1;
+#X connect 22 0 16 0;
+#X connect 22 0 17 0;
+#X connect 22 0 18 0;
+#X connect 22 0 19 0;
+#X connect 22 0 20 0;
+#X connect 22 0 21 0;
+#X connect 22 0 28 0;
+#X connect 22 0 29 0;
+#X connect 22 0 30 0;
+#X connect 22 0 31 0;
+#X connect 22 0 32 0;
+#X connect 22 0 33 0;
+#X connect 23 0 24 0;
+#X connect 23 0 35 0;
+#X connect 23 0 58 0;
+#X connect 24 0 23 1;
+#X connect 25 0 27 0;
+#X connect 25 0 72 0;
+#X connect 27 0 23 0;
+#X connect 36 0 37 1;
+#X connect 37 0 36 0;
+#X connect 37 0 38 0;
+#X connect 37 0 85 0;
+#X connect 39 0 37 0;
+#X connect 40 0 23 0;
+#X connect 43 0 44 0;
+#X connect 45 0 69 0;
+#X connect 45 0 79 0;
+#X connect 46 0 41 0;
+#X connect 48 0 49 0;
+#X connect 48 0 52 0;
+#X connect 49 0 48 1;
+#X connect 50 0 48 0;
+#X connect 51 0 54 0;
+#X connect 52 0 67 0;
+#X connect 53 0 54 1;
+#X connect 54 0 53 0;
+#X connect 54 0 55 0;
+#X connect 54 0 83 0;
+#X connect 56 0 54 0;
+#X connect 57 0 48 0;
+#X connect 61 0 25 0;
+#X connect 61 0 68 0;
+#X connect 62 0 60 0;
+#X connect 68 0 49 0;
+#X connect 70 0 42 0;
+#X connect 70 0 41 0;
+#X connect 71 0 70 0;
+#X connect 72 0 22 0;
+#X connect 72 0 23 0;
+#X connect 72 0 26 0;
+#X connect 73 0 3 0;
+#X connect 73 1 84 0;
+#X connect 73 2 4 0;
+#X connect 73 3 5 0;
+#X connect 75 0 59 0;
+#X connect 76 0 47 0;
+#X connect 77 0 78 0;
+#X connect 79 0 81 0;
+#X connect 79 1 71 0;
+#X connect 79 3 46 0;
+#X connect 79 3 69 0;
+#X connect 81 0 70 0;
+#X connect 82 0 86 0;
+#X connect 82 0 87 0;
+#X connect 83 0 57 0;
+#X connect 83 1 56 0;
+#X connect 85 0 40 0;
+#X connect 85 1 39 0;
+#X connect 87 0 45 0;

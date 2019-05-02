@@ -86,7 +86,7 @@ Aux: Wave \;;
 -1;
 #X obj 132 150 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 124 105 print;
+#X obj 80 101 print here;
 #X connect 2 0 4 0;
 #X connect 2 0 83 0;
 #X connect 3 0 5 0;
