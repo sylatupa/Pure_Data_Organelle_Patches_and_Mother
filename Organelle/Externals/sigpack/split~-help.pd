@@ -1,0 +1,94 @@
+#N canvas 449 80 557 534 10;
+#X obj 0 0 cnv 15 552 40 empty empty split~ 3 12 0 18 -204280 -1 0
+;
+#X obj 0 319 cnv 3 550 3 empty empty inlets 8 12 0 13 -228856 -1 0
+;
+#X obj 0 400 cnv 3 550 3 empty empty outlets 8 12 0 13 -228856 -1 0
+;
+#X obj 0 462 cnv 3 550 3 empty empty arguments 8 12 0 13 -228856 -1
+0;
+#X obj 79 409 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 79 333 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 0 496 cnv 15 552 21 empty empty empty 20 12 0 14 -233017 -33289
+0;
+#N canvas 238 349 428 75 Related_objects 0;
+#X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
+#X text 6 1 Related Objects;
+#X restore 206 498 pd Related_objects;
+#N canvas 561 590 379 261 META 0;
+#X text 12 25 LICENSE GPL v2;
+#X text 12 166 MAINTAINER Fred Jan Kraan <fjkraan@xs4all.nl>;
+#X text 12 83 INLET_0 signal;
+#X text 12 123 OUTLET_0 signal;
+#X text 12 187 HELP_PATCH_AUTHORS Martin Weiss 2003 Updated by Fred
+Jan Kraan 2016-02.;
+#X text 12 64 VERSION 0.03;
+#X text 11 103 INLET_1 float;
+#X text 12 143 AUTHOR Martin Weiss;
+#X text 12 5 KEYWORDS signal split;
+#X text 12 45 DESCRIPTION signal split;
+#X restore 502 500 pd META;
+#X obj 96 268 output~;
+#X obj 307 214 metro 100;
+#X obj 307 193 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 107 333 signal;
+#X obj 79 358 cnv 17 3 17 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X obj 95 59 osc~ 440;
+#X text 107 409 signal;
+#N canvas 518 711 450 334 view 0;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$0-split_l 100 float 0;
+#X coords 0 1 99 -1 200 100 1 0 0;
+#X restore 128 153 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$0-clean 100 float 0;
+#X coords 0 1 100 -1 200 20 1 0 0;
+#X restore 128 273 graph;
+#X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
+#X text 6 1 waveform viewer;
+#X text 14 296 array updates can cause dropouts when visible;
+#X text 118 152 1;
+#X text 112 241 -1;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$0-split_h 100 float 0;
+#X coords 0 1 99 -1 200 100 1 0 0;
+#X restore 128 36 graph;
+#X text 118 34 1;
+#X text 112 123 -1;
+#X restore 307 297 pd view waveform;
+#X obj 307 235 tabwrite~ \$0-clean;
+#X floatatom 201 80 5 -10 10 0 - - -, f 5;
+#X text 107 358 float;
+#X obj 96 167 sigpack/split~ 0.5;
+#X obj 307 277 tabwrite~ \$0-split_l;
+#X obj 307 256 tabwrite~ \$0-split_h;
+#X obj 79 434 cnv 17 3 17 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X text 107 434 signal;
+#X text 162 333 - signal to switch;
+#X obj 502 6 split~;
+#X text 163 357 - if the signal is higher than this level \, it is
+routed to outlet 0 if it is lower \, it is routed to outlet 1 An inactive
+outlet is 0;
+#X text 164 409 - upper part of the signal or 0;
+#X text 164 434 - lower part of the signal or 0;
+#X text 8 23 signal split function, f 75;
+#X text 96 471 default split value, f 71;
+#X obj 204 61 hsl 128 15 -1 1 0 0 empty empty split_level 8 8 0 10
+-262144 -1 -1 0 1;
+#X connect 10 0 17 0;
+#X connect 10 0 21 0;
+#X connect 10 0 22 0;
+#X connect 11 0 10 0;
+#X connect 14 0 17 0;
+#X connect 14 0 20 0;
+#X connect 18 0 20 1;
+#X connect 20 0 9 0;
+#X connect 20 0 9 1;
+#X connect 20 0 21 0;
+#X connect 20 1 22 0;
+#X connect 32 0 18 0;

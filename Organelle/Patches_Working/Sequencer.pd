@@ -1,0 +1,150 @@
+#N canvas 67 87 767 813 12;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array 29-sequence 9 float 3;
+#A 0 110 275 385 495 295 365 215 150 0;
+#X coords 0 500 9 0 200 100 1;
+#X restore 487 281 graph;
+#X obj 27 426 *~;
+#X obj 28 455 hip~ 5;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array 29-envelope 103 float 1;
+#A 0 0.91 0.863334 0.95 0.95 0.95 0.94 0.93 0.920001 0.900001 0.892501
+0.885002 0.877502 0.870002 0.860002 0.850002 0.835003 0.820003 0.817503
+0.815003 0.812503 0.810003 0.800004 0.790004 0.785004 0.780004 0.770004
+0.755005 0.740005 0.730005 0.720006 0.720006 0.700006 0.700006 0.695006
+0.690006 0.670007 0.660007 0.650007 0.650007 0.640008 0.630008 0.620008
+0.610008 0.600009 0.570009 0.55501 0.54001 0.53001 0.520011 0.520011
+0.515011 0.510011 0.500011 0.490011 0.480012 0.470012 0.470012 0.465012
+0.460012 0.440013 0.430013 0.430013 0.430013 0.430013 0.420013 0.410013
+0.410013 0.390014 0.87998 0.87998 0.899979 0.919979 0.929978 0.934978
+0.92 0.92 0.93 0.93 0.93 0.925 0.92 0.92 0.92 0.91 0.906667 0.903334
+0.900001 0.895001 0.890001 0.890001 0.890001 0.880001 0.870001 0.870001
+0.865001 0.860002 0.860002 0.860002 0.860002 0.860002 0.855002 0.850002
+0.850002;
+#X coords 0 1 102 0 200 100 1;
+#X restore 487 401 graph;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array 29-sample 259 float 1;
+#A 0 -0.979999 -0.899999 -0.1 0.879999 0.879999 0.88 0.876 0.872 0.868
+0.864 0.86 0.86 0.86 0.86 0.86 0.86 -0.04 0.837143 -0.02 -0.02 -0.02
+-0.02 0.04 0.0599999 0.02 0.00999999 0 -0.0799999 -0.0999999 -0.12
+-0.14 -0.18 -0.28 -0.3 -0.31 -0.32 -0.32 -0.326666 -0.333333 -0.34
+-0.32 -0.32 -0.31 -0.3 -0.3 -0.28 -0.273333 -0.266666 -0.26 -0.22 -0.213333
+-0.206666 -0.2 -0.18 -0.16 -0.14 -0.14 -0.14 -0.13 -0.12 -0.11 -0.0999999
+-0.0799999 -0.0699999 -0.0599999 -0.05 -0.04 0 0 0 0 0.04 0.0599999
+0.0999999 0.105 0.11 0.115 0.14 0.15 0.16 0.17 0.18 0.22 0.23 0.24
+0.24 0.24 0.24 0.22 0.22 0.22 0.22 0.2 0.2 0.18 0.14 0.13 0.0999999
+0.0949999 0.0899999 0.0849999 0.04 0.02 0 -0.04 -0.04 -0.04 -0.0599999
+-0.0799999 -0.0866666 -0.0933332 -0.0999999 -0.12 -0.14 -0.14 -0.14
+-0.16 -0.16 -0.16 -0.16 -0.18 -0.18 -0.18 -0.18 -0.18 -0.18 -0.186666
+-0.193333 -0.2 -0.22 -0.22 -0.23 -0.24 -0.24 -0.24 -0.22 -0.206666
+-0.193333 -0.16 -0.04 -0.0333333 -0.0266666 0 0.02 0.04 0.05 0.0599999
+0.0699999 0.0799999 0.0866666 0.0933332 0.0999999 0.125 0.15 0.175
+0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.18 0.18 0.18 0.14 0.133333 0.126667 0.12
+0.0799999 0.0799999 0.0699999 0.0599999 0.05 0.04 -0.02 -0.03 -0.04
+-0.04 -0.0599999 -0.0699999 -0.0799999 -0.0999999 -0.12 -0.12 -0.13
+-0.14 -0.18 -0.18 -0.18 -0.18 -0.18 -0.04 -0.2 -0.2 -0.22 -0.2 -0.2
+-0.19 -0.18 -0.18 -0.16 -0.14 -0.14 -0.14 -0.12 -0.105 -0.0899999 -0.0749999
+-0.0599999 -0.05 -0.04 -0.03 -0.02 -0.015 -0.00999999 -0.005 -7.45058e-10
+0.016 0.032 0.048 0.0639999 0.0799999 0.0849999 0.0899999 0.0949999
+0.0999999 0.11 0.12 0.12 0.12 0.14 0.14 0.14 0.14 0.14 0.13 0.12 0.106667
+0.0933332 0.0799999 0.0599999 0.0533333 0.0466666 0.04 0 -0.02 -0.04
+-0.0599999 -0.0799999 -0.04 -0.14 -0.15 -0.16 -0.2 -0.213333 -0.226666
+-0.24 -0.44;
+#X coords 0 1 258 -1 200 100 1;
+#X restore 487 520 graph;
+#X text 435 772 updated for Pd version 0.37;
+#X obj 26 218 tabread~ 29-sequence;
+#X obj 106 241 wrap~;
+#X obj 106 265 *~ 100;
+#X obj 106 289 +~ 1;
+#X obj 26 242 phasor~;
+#X obj 26 266 -~ 0.5;
+#X obj 27 377 cos~;
+#X obj 84 336 *~;
+#X obj 17 518 output~;
+#X obj 84 408 tabread4~ 29-sample;
+#X obj 106 313 tabread4~ 29-envelope;
+#X obj 84 360 *~ 128;
+#X obj 84 384 +~ 129;
+#X obj 27 401 +~ 1;
+#X obj 26 194 *~ 9;
+#N canvas 328 85 609 424 make-tables 0;
+#X msg 109 52 bang;
+#X obj 109 77 t b b;
+#X obj 152 134 f;
+#X obj 190 134 + 1;
+#X msg 174 106 0;
+#X obj 109 103 until;
+#X obj 152 162 t f f;
+#X obj 27 190 moses 10;
+#X obj 18 272 tabwrite 29-envelope;
+#X obj 75 159 sel 102;
+#X obj 23 218 expr ($f1-1)/10;
+#X obj 35 243 expr (101-$f1)/90;
+#X msg 120 380 \; 29-sample cosinesum 256 0 0 0 0 0 0 1;
+#X msg 120 338 \; 29-sequence 0 55 550 385 495 165 385 495 275 615
+;
+#X text 30 8 bang to recalculate the envelope table (I did this but
+then went in and changed it with the mouse afterward.);
+#X text 84 299 The sequence is just a list of specified frequencies
+\; the wavetable is a cosine.;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 1 1 4 0;
+#X connect 2 0 3 0;
+#X connect 2 0 6 0;
+#X connect 2 0 9 0;
+#X connect 3 0 2 1;
+#X connect 4 0 2 1;
+#X connect 5 0 2 0;
+#X connect 6 0 7 0;
+#X connect 6 1 8 1;
+#X connect 7 0 10 0;
+#X connect 7 1 11 0;
+#X connect 9 0 5 1;
+#X connect 10 0 8 0;
+#X connect 11 0 8 0;
+#X restore 558 640 pd make-tables;
+#X text 46 1 ANALOG-SYNTH-STYLE SEQUENCER;
+#X obj 26 170 phasor~ 0.6;
+#X text 97 194 main loop: sawtooth of amplitude 9;
+#X text 218 219 read frequency sequence;
+#X text 162 241 9x original frequency sawtooth;
+#X text 173 266 adjust for reading;
+#X text 346 266 envelope sample;
+#X text 123 336 multiply envelope by audio-frequency sawtooth;
+#X text 147 361 adjust amplitude and center for wavetable;
+#X text 62 428 multiply by raised-cosine smoothing function;
+#X text 347 640 how to make the tables:;
+#X text 27 27 Some control operations can be carried out entirely by
+tilde objects passing audio signals around. Here is an imitation of
+an analog sequencer and envelope generator. A phasor~ loops through
+the "sequence" table at 0.6 Hz \, generating 9 frequencies. Simultaneously
+\, by multiplying by 9 and wrapping \, we create a sawtooth at 9*0.6=5.4
+Hz \, which reads a second table for an envelope shape. This becomes
+the grain size for a sampler based on the 18.sampler.looped example
+earlier.;
+#X obj 141 485 dac~;
+#X connect 1 0 2 0;
+#X connect 2 0 14 0;
+#X connect 2 0 14 1;
+#X connect 2 0 34 0;
+#X connect 2 0 34 1;
+#X connect 6 0 10 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 16 0;
+#X connect 10 0 11 0;
+#X connect 11 0 13 0;
+#X connect 11 0 12 0;
+#X connect 12 0 19 0;
+#X connect 13 0 17 0;
+#X connect 15 0 1 1;
+#X connect 16 0 13 1;
+#X connect 17 0 18 0;
+#X connect 18 0 15 0;
+#X connect 19 0 1 0;
+#X connect 20 0 6 0;
+#X connect 20 0 7 0;
+#X connect 23 0 20 0;

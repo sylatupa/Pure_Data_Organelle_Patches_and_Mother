@@ -1,0 +1,38 @@
+#N canvas 0 22 1280 699 10;
+#X obj 104 116 bng 30 250 50 0 empty empty Select 0 -6 0 12 -260097
+-1 -1;
+#X symbolatom 107 178 18 0 0 0 - - -, f 18;
+#X obj 148 116 bng 30 250 50 0 empty empty Play 0 -6 0 12 -105152 -1
+-1;
+#X obj 187 115 bng 30 250 50 0 empty empty Stop 0 -6 0 12 -193834 -1
+-1;
+#X obj 286 102 openpanel;
+#X msg 313 178 open /home/adam/Desktop/PUREDATA PATCHES/SOUND FILES/SOUNDS/people/footstepsprocessed.wav
+;
+#X msg 273 217 stop;
+#X obj 283 309 outlet~;
+#X msg 324 138 set open \$1;
+#X msg 408 247 start;
+#X obj 451 113 t b b;
+#X obj 263 47 spigot;
+#X obj 109 154 tgl 15 0 empty empty Loop? 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 366 313 outlet~;
+#X obj 315 265 readanysf~ 2;
+#X connect 0 0 4 0;
+#X connect 2 0 10 0;
+#X connect 3 0 6 0;
+#X connect 4 0 1 0;
+#X connect 4 0 8 0;
+#X connect 5 0 14 0;
+#X connect 6 0 14 0;
+#X connect 8 0 5 0;
+#X connect 9 0 14 0;
+#X connect 10 0 9 0;
+#X connect 10 1 5 0;
+#X connect 11 0 2 0;
+#X connect 12 0 11 1;
+#X connect 14 0 7 0;
+#X connect 14 1 13 0;
+#X connect 14 2 11 0;
+#X coords 0 -1 1 1 120 100 2 100 100;

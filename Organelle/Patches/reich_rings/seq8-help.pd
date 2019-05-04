@@ -1,0 +1,104 @@
+#N canvas 95 122 523 355 10;
+#X obj 120 102 seq8 0 1 0 0 1 0 0 1 0;
+#X obj 120 57 tgl 15 0 empty empty click_here 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 120 131 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 167 132 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 215 133 5 0 0 0 - - -, f 5;
+#X floatatom 263 133 5 0 0 0 - - -, f 5;
+#X obj 115 21 cnv 15 165 30 empty empty empty 20 12 0 14 -261474 -66577
+0;
+#X text 121 27 8-step sequencer module;
+#X obj 298 22 cnv 15 100 60 empty empty ECL 30 16 0 20 -261691 -191155
+0;
+#X text 314 50 madam data;
+#X text 331 63 2017;
+#X obj 284 159 cnv 15 200 100 empty empty empty 20 12 0 14 -231988
+-66577 0;
+#X obj 46 159 cnv 15 230 150 empty empty empty 20 12 0 14 -195321 -66577
+0;
+#X text 52 164 Inlets;
+#X text 292 165 Outlets;
+#X text 291 183 1 "On" bangs \; 2 "Off" bangs \; 3 0s and 1s according
+to the sequence \; 4 Step count (0-7) \;, f 29;
+#X text 52 184 1 Bang - triggers the next step \; (2-9) a 0 or 1 sets
+the value of steps 1 to 8 \; 10 Sending a number 0-7 to this inlet
+causes the sequencer to jump to that step the next time it receives
+a trigger \;, f 35;
+#X msg 238 70 0;
+#X msg 53 77 \; pd dsp 1;
+#X obj 120 78 metro 150;
+#N canvas 496 157 558 361 sound-off 0;
+#X obj 183 94 inlet;
+#X obj 187 134 ad 5 100;
+#X obj 170 190 *~;
+#X obj 128 131 noise~;
+#X obj 170 253 dac~;
+#X obj 235 161 ad 5 80;
+#X obj 248 77 loadbang;
+#X obj 170 212 *~ 1.5;
+#X obj 235 205 +~ 500;
+#X obj 113 161 vcf~ 80;
+#X obj 235 183 *~ 2500;
+#X msg 290 109 0 80;
+#X msg 243 103 70 50;
+#X connect 0 0 1 0;
+#X connect 0 0 5 0;
+#X connect 1 0 2 1;
+#X connect 2 0 7 0;
+#X connect 3 0 9 0;
+#X connect 5 0 10 0;
+#X connect 6 0 12 0;
+#X connect 6 0 11 0;
+#X connect 7 0 4 0;
+#X connect 7 0 4 1;
+#X connect 8 0 9 1;
+#X connect 9 0 2 0;
+#X connect 10 0 8 0;
+#X connect 11 0 5 2;
+#X connect 12 0 1 2;
+#X restore 305 133 pd sound-off;
+#N canvas 496 157 558 361 sound-on 0;
+#X obj 183 94 inlet;
+#X obj 187 134 ad 5 100;
+#X obj 170 190 *~;
+#X obj 128 131 noise~;
+#X obj 170 253 dac~;
+#X obj 235 161 ad 5 80;
+#X obj 248 77 loadbang;
+#X obj 235 205 +~ 40;
+#X obj 235 183 *~ 1800;
+#X obj 170 212 *~ 1.5;
+#X obj 113 161 vcf~ 80;
+#X msg 290 109 5 55;
+#X msg 243 103 0 250;
+#X connect 0 0 1 0;
+#X connect 0 0 5 0;
+#X connect 1 0 2 1;
+#X connect 2 0 9 0;
+#X connect 3 0 10 0;
+#X connect 5 0 8 0;
+#X connect 6 0 12 0;
+#X connect 6 0 11 0;
+#X connect 7 0 10 1;
+#X connect 8 0 7 0;
+#X connect 9 0 4 0;
+#X connect 9 0 4 1;
+#X connect 10 0 2 0;
+#X connect 11 0 5 2;
+#X connect 12 0 1 2;
+#X restore 40 131 pd sound-on;
+#X msg 270 71 4;
+#X connect 0 0 2 0;
+#X connect 0 0 21 0;
+#X connect 0 1 3 0;
+#X connect 0 1 20 0;
+#X connect 0 2 4 0;
+#X connect 0 3 5 0;
+#X connect 1 0 18 0;
+#X connect 1 0 19 0;
+#X connect 17 0 0 9;
+#X connect 19 0 0 0;
+#X connect 22 0 0 9;

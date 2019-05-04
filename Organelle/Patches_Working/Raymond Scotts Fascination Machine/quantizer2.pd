@@ -1,0 +1,33 @@
+#N canvas 1737 33 718 490 10;
+#X obj 17 14 inlet;
+#X floatatom 19 192 5 0 0 0 - - -, f 5;
+#X obj 17 244 tabread minor_scale;
+#X msg 111 213 set minor_scale;
+#X msg 234 214 set major_scale;
+#X obj 115 144 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 173 145 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 226 36 inlet;
+#X floatatom 226 145 5 0 0 0 - - -, f 5;
+#X obj 17 294 +;
+#X obj 15 366 outlet;
+#X text 105 122 minor;
+#X text 161 123 major;
+#X text 213 122 key offset;
+#X obj 96 33 loadbang;
+#X obj 162 64 \$1;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 9 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 3 0;
+#X connect 6 0 4 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 1;
+#X connect 9 0 10 0;
+#X connect 14 0 5 0;
+#X connect 14 0 15 0;
+#X connect 15 0 8 0;
+#X coords 0 -1 1 1 220 100 1 100 100;

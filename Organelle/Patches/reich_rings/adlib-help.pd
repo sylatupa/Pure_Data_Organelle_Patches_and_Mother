@@ -1,0 +1,5 @@
+#N canvas 200 120 450 300 10;
+#X text 66 114 Varun Nair (tb_compressor~ and tb_peakcomp~);
+#X text 68 48 this library contains convenience abstractions by Ada
+Adhiyatma [madam data]. It also contains externals by:, f 44;
+#X text 94 208 madam data 2017;

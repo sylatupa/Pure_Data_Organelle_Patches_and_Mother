@@ -1,0 +1,64 @@
+#N canvas 0 23 1366 719 10;
+#X obj -64 -99 inlet;
+#X obj -53 145 select 1;
+#X obj -54 218 outlet;
+#X obj 350 -75 inlet;
+#X obj 26 221 outlet;
+#X obj 26 191 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text -54 257 Generates 'euclidean rhythms' (see cgm.cs.mcgill.ca/~godfried/publications/banff.pdf).
+Ideally to be used with a [metro]-powered [f ]x[+ 1] counter attached
+to the first inlet. Hits per bar \, offset and bar length can be set
+by the first three arguments respectively. Patch based on this implementation
+of Euclid's algorithm https://forum.pdpatchrepo.info/user/stutter;
+#X obj -55 -41 + 1;
+#X obj -12 -39 f;
+#X obj 351 -45 int;
+#X floatatom 45 86 5 0 0 0 length - -, f 5;
+#X obj -53 80 %;
+#X obj 399 -48 \$3;
+#X obj 400 -92 loadbang;
+#X obj 49 -23 inlet;
+#X obj 48 14 int;
+#X obj 101 -71 loadbang;
+#X floatatom 42 39 5 0 0 0 hits - -, f 5;
+#X obj 102 -26 \$1;
+#X obj 191 -63 inlet;
+#X obj 192 -33 int;
+#X obj 254 -76 loadbang;
+#X obj 240 -36 \$2;
+#X floatatom 46 60 5 0 0 0 offset - -, f 5;
+#X obj -53 15 +;
+#X obj -53 47 *;
+#X obj -53 113 <;
+#X obj 28 101 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 8 0;
+#X connect 1 0 27 0;
+#X connect 1 1 5 0;
+#X connect 3 0 9 0;
+#X connect 5 0 4 0;
+#X connect 7 0 8 1;
+#X connect 7 0 24 0;
+#X connect 8 0 7 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 1;
+#X connect 11 0 26 0;
+#X connect 12 0 9 0;
+#X connect 13 0 12 0;
+#X connect 14 0 15 0;
+#X connect 15 0 17 0;
+#X connect 16 0 18 0;
+#X connect 17 0 25 1;
+#X connect 17 0 26 1;
+#X connect 18 0 15 0;
+#X connect 19 0 20 0;
+#X connect 20 0 23 0;
+#X connect 21 0 22 0;
+#X connect 22 0 20 0;
+#X connect 23 0 24 1;
+#X connect 24 0 25 0;
+#X connect 25 0 11 0;
+#X connect 26 0 1 0;
+#X connect 27 0 2 0;
+#X coords 0 -1 1 1 85 110 1 0 0;

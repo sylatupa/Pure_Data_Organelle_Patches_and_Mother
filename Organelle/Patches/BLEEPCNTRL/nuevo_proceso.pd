@@ -1,0 +1,4 @@
+#N canvas 0 54 1024 546 10;
+#X obj 9 8 pulso;
+#X obj 10 404 mixout;
+#X obj 927 8 utilmenu;

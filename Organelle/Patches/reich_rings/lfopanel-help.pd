@@ -1,0 +1,44 @@
+#N canvas 0 22 484 519 10;
+#X obj 264 187 cnv 15 100 60 empty empty empty 20 12 0 14 -231988 -66577
+0;
+#X obj 26 376 cnv 15 380 110 empty empty empty 20 12 0 14 -126015 -66577
+0;
+#X obj 26 187 cnv 15 230 185 empty empty empty 20 12 0 14 -195321 -66577
+0;
+#X obj 113 21 cnv 15 210 30 empty empty empty 20 12 0 14 -261474 -66577
+0;
+#X text 32 192 Inlets;
+#X text 272 193 Outlets;
+#X text 31 380 Controls;
+#X obj 338 22 cnv 15 100 60 empty empty ECL 30 16 0 20 -261691 -191155
+0;
+#X text 355 50 madam data;
+#X text 371 63 2017;
+#X text 121 29 Low-Frequency Oscillator module;
+#X obj 162 61 lfopanel 0 9.05584 0.359091 3;
+#X obj 260 109 osc~;
+#X obj 260 153 dac~;
+#X obj 259 66 +~ 1.5;
+#X obj 326 99 bng 20 250 50 0 empty empty click_here 24 7 0 10 -262144
+-1 -1;
+#X msg 326 125 \; pd dsp 1;
+#X text 271 211 1 Signal out (-1 to 1), f 13;
+#X text 32 402 1 Frequency knob. Sets how fast the oscillator cycles
+\; 2 Pulse width knob. Changes the duty cycle (proportion of highs
+to lows) of the oscillator. Only works when set to pulse \; 3 Waveform
+selector. From left to right: Sine - Saw - Pulse - Triangle \;;
+#X text 32 210 1 Frequency - signal modulates the oscillator's frequency
+\; 2 Pulse width modulation- (pulse wave only) signal modulates the
+pulse width \; 3 Waveform selector - sending a number 0-3 to this inlet
+will select the corresponding waveform 4 Phase - sending a number 0-1
+to this inlet will set the phase (position in its cycle) of the oscillator.
+, f 36;
+#X obj 259 88 *~ 400;
+#X obj 261 131 *~ 0.04;
+#X connect 11 0 14 0;
+#X connect 12 0 21 0;
+#X connect 14 0 20 0;
+#X connect 15 0 16 0;
+#X connect 20 0 12 0;
+#X connect 21 0 13 0;
+#X connect 21 0 13 1;

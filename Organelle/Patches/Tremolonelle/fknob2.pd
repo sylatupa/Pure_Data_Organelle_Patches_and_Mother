@@ -1,0 +1,12 @@
+#N canvas 15 22 450 300 10;
+#X obj 111 64 inlet;
+#X obj 114 138 i;
+#X obj 113 165 / 256;
+#X obj 115 236 s fknob2;
+#X obj 112 96 * 265;
+#X obj 114 208 min 1;
+#X connect 0 0 4 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 4 0 1 0;
+#X connect 5 0 3 0;

@@ -1,0 +1,125 @@
+#N canvas 391 23 835 667 10;
+#X obj 112 116 bng 25 250 50 0 empty empty Sel 0 -6 0 9 -260097 -1
+-1;
+#X obj 144 116 bng 25 250 50 0 \$0-playsnd empty Play 0 -6 0 9 -105152
+-1 -1;
+#X obj 176 116 bng 25 250 50 0 \$0-stopsnd empty Stop 0 -6 0 9 -193834
+-1 -1;
+#X obj 256 247 openpanel;
+#X msg 570 351 stop;
+#X obj 579 447 outlet~;
+#X msg 626 349 start;
+#X obj 626 296 t b b;
+#X obj 263 47 spigot;
+#X obj 207 116 tgl 25 0 empty empty Loop? 0 -6 0 9 -240490 -1 -1 0
+1;
+#X obj 628 447 outlet~;
+#X obj 578 420 readsf~ 2;
+#X obj 126 146 cnv 15 110 13 empty \$0-file1rcv blerphi.wav 3 7 0 12
+-230942 -261607 0;
+#X obj 126 161 cnv 15 110 13 empty \$0-file2rcv seas.wav 3 7 0 12 -230942
+-261607 0;
+#X obj 126 176 cnv 15 110 13 empty \$0-file3rcv none 3 7 0 12 -230942
+-261607 0;
+#X obj 126 191 cnv 15 110 13 empty \$0-file4rcv none 3 7 0 12 -230942
+-261607 0;
+#X obj 126 206 cnv 15 110 13 empty \$0-file5rcv none 3 7 0 12 -230942
+-261607 0;
+#X obj 126 221 cnv 15 110 13 empty \$0-file6rcv none 3 7 0 12 -230942
+-261607 0;
+#X obj 126 236 cnv 15 110 13 empty \$0-file7rcv none 3 7 0 12 -230942
+-261607 0;
+#X obj 126 251 cnv 15 110 13 empty \$0-file8rcv none 3 7 0 12 -230942
+-261607 0;
+#X obj 107 145 vradio 15 1 0 8 empty empty empty 0 -8 0 10 -210262
+-244296 -1 1;
+#X obj 168 387 symbol;
+#X obj 211 387 symbol;
+#X obj 254 387 symbol;
+#X obj 297 387 symbol;
+#X obj 340 387 symbol;
+#X obj 383 387 symbol;
+#X obj 426 387 symbol;
+#X obj 469 387 symbol;
+#X obj 215 341 route 0 1 2 3 4 5 6 7;
+#X obj 12 473 s \$0-file1rcv;
+#X obj 61 403 prepend;
+#X obj 62 361 unpack s s;
+#X obj 58 493 s \$0-file2rcv;
+#X obj 102 473 s \$0-file3rcv;
+#X obj 148 493 s \$0-file4rcv;
+#X obj 19 514 s \$0-file5rcv;
+#X obj 65 534 s \$0-file6rcv;
+#X obj 109 514 s \$0-file7rcv;
+#X obj 155 534 s \$0-file8rcv;
+#X obj 61 428 route 0 1 2 3 4 5 6 7;
+#X obj 61 382 prepend label;
+#X obj 62 340 moonlib/basedir;
+#X msg 294 458 set open \$1;
+#X msg 294 480 open /Users/adamadhiyatma/Documents/Pd/recordings/seas.wav
+, f 24;
+#X obj 254 318 prepend;
+#X obj 570 322 r \$0-stopsnd;
+#X obj 623 252 r \$0-playsnd;
+#X obj 678 447 s \$0-restart;
+#X obj 263 26 r \$0-restart;
+#X obj 406 316 print;
+#X obj 277 272 t b f;
+#X obj 272 296 bang;
+#X msg 48 289 none;
+#X text 324 102 click select to choose a file for the currently-selected
+slot;
+#X connect 0 0 3 0;
+#X connect 3 0 42 0;
+#X connect 3 0 45 0;
+#X connect 4 0 11 0;
+#X connect 6 0 11 0;
+#X connect 7 0 6 0;
+#X connect 7 1 44 0;
+#X connect 8 0 1 0;
+#X connect 9 0 8 1;
+#X connect 11 0 5 0;
+#X connect 11 1 10 0;
+#X connect 11 2 48 0;
+#X connect 20 0 31 1;
+#X connect 20 0 51 0;
+#X connect 21 0 43 0;
+#X connect 22 0 43 0;
+#X connect 23 0 43 0;
+#X connect 24 0 43 0;
+#X connect 25 0 43 0;
+#X connect 26 0 43 0;
+#X connect 27 0 43 0;
+#X connect 28 0 43 0;
+#X connect 29 0 21 0;
+#X connect 29 1 22 0;
+#X connect 29 2 23 0;
+#X connect 29 3 24 0;
+#X connect 29 4 25 0;
+#X connect 29 5 26 0;
+#X connect 29 6 27 0;
+#X connect 29 7 28 0;
+#X connect 31 0 40 0;
+#X connect 32 0 41 0;
+#X connect 40 0 30 0;
+#X connect 40 1 33 0;
+#X connect 40 2 34 0;
+#X connect 40 3 35 0;
+#X connect 40 4 36 0;
+#X connect 40 5 37 0;
+#X connect 40 6 38 0;
+#X connect 40 7 39 0;
+#X connect 41 0 31 0;
+#X connect 42 0 32 0;
+#X connect 43 0 44 0;
+#X connect 44 0 11 0;
+#X connect 45 0 29 0;
+#X connect 45 0 50 0;
+#X connect 46 0 4 0;
+#X connect 47 0 7 0;
+#X connect 49 0 8 0;
+#X connect 51 0 52 0;
+#X connect 51 1 45 1;
+#X connect 52 0 45 0;
+#X connect 53 0 41 0;
+#X coords 0 -1 1 1 150 175 2 100 100;

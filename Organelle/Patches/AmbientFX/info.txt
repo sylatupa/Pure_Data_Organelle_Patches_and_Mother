@@ -1,0 +1,69 @@
+Features:
+-Input Pitch Tracking monosynth w/ wavetable oscillator
+	-Over 200 waveforms
+	-Filter/LFO 
+	-Attack/Release
+-Granular Synth (C&G Granular freeze)
+-Delay w/ filter, Autopan, LFO for filter
+-VariDelay effect: ranges from flanging to chorus to wild notes ascending or descending
+-Lowpass filter with LFO / HPF 
+-Autopan/Leslie with LFO 
+-Reverb w/ freeze
+-Overdrive 
+
+Page 1:
+1. Filter Cutoff
+2. Filter Resonance
+3. LFO for filter
+4. Overdrive mix
+
+Page 2:
+1. Autopan Speed
+2. Autopan Depth (3 levels)
+3. Autopan LFO (Leslie effect)
+4. Octave/Synth mix
+	-0-33%: 1 octave down wet/dry
+	-34-66%: same octave wet/dry
+	-67%-100%: 1 octave up wet/dry
+
+Page 3:
+1. Octave waveform 1
+2. Octave waveform 2
+3. Octave attack / fade in
+4. Octave release / fade out
+
+Page 4:
+1. Reverb roomsize
+2. Reverb mix
+3. Reverb dampening
+4. Reverb freeze/ hold 
+
+Page 5:
+1. Grain size
+2. Grain time 
+3. Grain wet/dry mix
+4. Grain freeze on/off
+
+Page 6:
+1. Grain spread
+2. LFO3/4 speed  
+	-3 controls delay filter/mix sweep
+	-4 controls grain-size a
+3. VariDelay Frequency      *based on G03.delay.variable.pd
+4. VariDelay Depth 
+
+Page 7:
+1. Delay time
+2. Delay feedback
+3. Delay filter cutoff
+4. Delay filter mix/resonance
+
+TIPS
+_______________
+-The pitch tracking is glitchy/unpredictable. It doensn't work with chords or multiple notes.
+sometimes it just gets it wrong. You may need to adjust the input gain (in main.pd) or the moses 60 value (in octaver.pd) to make it work correctly with your instrument. It was setup for a dual humbucker PRS guitar. 
+-Some values may jump between pages, and some pages may not update the knob values at first. These might be fixed but might not
+-If you aren't getting sound, check the filter settings on page 1 or page 3 for synth.
+-Try Page 6 knob 3 at a high setting and knob 4 at a low setting
+-I have not 'pushed' it, but you could probably overload this patch with a combo of delay feedback, granular freeze, reverb freeze, etc. Proceed with caution for your ears/speakers.
+-Swap out the files in the /wavs/ folder to find new sounds

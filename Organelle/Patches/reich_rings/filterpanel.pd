@@ -1,0 +1,54 @@
+#N canvas 532 134 1471 594 10;
+#X obj 102 102 cnv 15 116 96 empty empty vcf_\$1 76 7 0 10 -233017
+-66577 0;
+#X obj 218 308 bob~;
+#X obj 119 71 inlet~;
+#X obj 167 71 inlet~;
+#X obj 248 338 outlet~;
+#X obj 291 106 cyclone/scale~ -1 1 1 1;
+#X obj 31 36 inlet~;
+#X obj 467 31 expr 1 + $f1;
+#X obj 331 35 expr 1 - $f1;
+#X obj 217 231 *~;
+#X obj 217 211 smoother 50;
+#X obj 420 316 *~;
+#X obj 268 238 smoother 50;
+#X obj 364 136 expr 1 + $f1;
+#X obj 337 157 expr 1 - $f1;
+#X obj 99 31 inlet~;
+#X obj 292 309 bob~;
+#X obj 299 340 outlet~;
+#X obj 115 117 mknob 30 100 0 5 0 1 empty \$0-qknob Q -2 -6 0 8 -262144
+-1 -1 5400 1;
+#X obj 115 163 mknob 30 100 30 15000 1 1 empty \$0-freqknob freq -2
+-6 0 8 -262144 -1 -1 2900 1;
+#X obj 176 173 mknob 20 100 0 0.7 0 0 empty \$0-qmodknob QMod -2 -6
+0 8 -262144 -1 -1 0 1;
+#X obj 168 127 mknob 20 100 0 0.7 0 0 empty \$0-freqmodknob freqMod
+-2 -6 0 8 -262144 -1 -1 0 1;
+#X obj 429 272 scale~ -1 1 1 1;
+#X connect 1 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 22 0;
+#X connect 5 0 9 1;
+#X connect 6 0 1 0;
+#X connect 7 0 5 4;
+#X connect 8 0 5 3;
+#X connect 9 0 1 1;
+#X connect 9 0 16 1;
+#X connect 10 0 9 0;
+#X connect 11 0 1 2;
+#X connect 11 0 16 2;
+#X connect 12 0 11 0;
+#X connect 13 0 22 4;
+#X connect 14 0 22 3;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 18 0 12 0;
+#X connect 19 0 10 0;
+#X connect 20 0 13 0;
+#X connect 20 0 14 0;
+#X connect 21 0 7 0;
+#X connect 21 0 8 0;
+#X connect 22 0 11 1;
+#X coords 0 -1 1 1 120 100 2 100 100;

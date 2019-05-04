@@ -1,0 +1,278 @@
+#N canvas 342 23 570 586 10;
+#X obj 102 102 cnv 15 146 96 empty empty \$1 20 12 0 14 -163324 -66577
+0;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-table 259 float 5;
+#A 0 -1.20148 -1 -0.810724 -0.63326 -0.467216 -0.31221 -0.167866 -0.0338144
+0.0903053 0.204849 0.310166 0.406597 0.494477 0.574137 0.645895 0.71007
+0.766969 0.816895 0.860145 0.897008 0.927771 0.952708 0.972093 0.98619
+0.995261 0.999557 0.999329 0.994816 0.986257 0.97388 0.957912 0.938572
+0.916074 0.890625 0.86243 0.831684 0.798582 0.76331 0.726049 0.686977
+0.646266 0.60408 0.560583 0.515931 0.470276 0.423765 0.37654 0.328738
+0.280493 0.231934 0.183183 0.13436 0.0855808 0.0369554 -0.01141 -0.0594134
+-0.106956 -0.153946 -0.200292 -0.245909 -0.290715 -0.334633 -0.377589
+-0.419512 -0.460337 -0.5 -0.538443 -0.57561 -0.611449 -0.542857 -0.678953
+-0.710532 -0.740609 -0.76915 -0.796122 -0.821497 -0.845248 -0.867354
+-0.887794 -0.906551 -0.923612 -0.938965 -0.952601 -0.964516 -0.974704
+-0.983167 -0.989906 -0.994925 -0.99823 -0.999832 -0.714286 -0.997972
+-0.994539 -0.98946 -0.982757 -0.97445 -0.964564 -0.953125 -0.94016
+-0.925699 -0.909772 -0.892414 -0.873658 -0.85354 -0.832098 -0.809372
+-0.785401 -0.760228 -0.733895 -0.706446 -0.677928 -0.648387 -0.61787
+-0.6 -0.6 -0.6 -0.6 -0.6 -0.6 -0.44762 -0.438096 -0.428572 -0.270174
+-0.228571 -0.228571 -0.228571 -0.228571 -0.228571 -0.228571 -0.257143
+0.039053 0 0 0 0 0 -0.114286 0 0 0.0571429 0 0 0 0 0 0.586426 0.61787
+0.257143 0.257143 0.257143 0.257143 0.257143 0.285715 0.285715 0.285715
+0.285715 0.873658 0.892414 0.909772 0.925699 0.94016 0.953125 0.964564
+0.97445 0.982757 0.98946 0.994539 0.542857 0.999741 0.999832 0.99823
+0.994925 0.989906 0.983167 0.974704 0.964516 0.952601 0.938965 0.923612
+0.906551 0.887794 0.867354 0.845248 0.821497 0.796122 0.76915 0.740609
+0.710532 0.678953 0.645912 0.611449 0.57561 0.538443 0.5 0.460337 0.419512
+0.377589 0.334633 0.290715 0.245909 0.200292 0.153946 0.106956 0.0594134
+0.01141 -0.0369554 -0.0855808 -0.13436 -0.183183 -0.231934 -0.280493
+-0.328738 -0.37654 -0.423765 -0.470276 -0.515931 -0.560583 -0.60408
+-0.646266 -0.686977 -0.726049 -0.76331 -0.798582 -0.831684 -0.86243
+-0.890625 -0.916074 -0.938572 -0.957912 -0.97388 -0.986257 -0.994816
+-0.999329 -0.999557 -0.995261 -0.98619 -0.972093 -0.952708 -0.927771
+-0.897008 -0.860145 -0.816895 -0.766969 -0.71007 -0.645895 -0.574137
+-0.494477 -0.406597 -0.310166 -0.204849 -0.0903053 0.0338144 0.167866
+0.31221 0.467216 0.63326 0.810724 1 1.20148;
+#X coords 0 1 258 -1 100 70 2 0 0;
+#X restore 106 107 graph;
+#N canvas 113 22 849 700 make-table 0;
+#X obj 141 304 t b b;
+#X obj 213 329 f;
+#X obj 251 329 + 1;
+#X msg 235 306 0;
+#X obj 141 327 until;
+#X obj 213 359 t f f;
+#X obj 140 355 sel 258;
+#X text 203 172 normalize from -1 to 1;
+#X obj 141 285 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 88 386 expr ($f1-129)/128;
+#X obj 141 262 inlet;
+#X obj 171 534 t b b;
+#X obj 243 559 f;
+#X obj 281 559 + 1;
+#X msg 265 536 0;
+#X obj 171 557 until;
+#X obj 243 589 t f f;
+#X obj 170 585 sel 258;
+#X obj 171 515 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 118 616 expr ($f1-129)/128;
+#X obj 171 492 inlet;
+#X obj 444 228 t b b;
+#X obj 516 253 f;
+#X obj 554 253 + 1;
+#X msg 538 230 0;
+#X obj 444 251 until;
+#X obj 516 283 t f f;
+#X obj 443 279 sel 258;
+#X obj 391 334 expr 16*$f1*$f1*$f1*$f1*$f1-20*$f1*$f1*$f1+5*$f1;
+#X obj 444 209 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 391 310 expr ($f1-129)/128;
+#X obj 444 186 inlet;
+#X obj 504 476 t b b;
+#X obj 576 501 f;
+#X obj 614 501 + 1;
+#X msg 598 478 0;
+#X obj 504 499 until;
+#X obj 576 531 t f f;
+#X obj 503 527 sel 258;
+#X obj 504 457 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 448 558 expr ($f1-129)/128;
+#X obj 504 434 inlet;
+#X obj 88 410 expr 4*$f1*$f1*$f1-3*$f1;
+#X obj 118 640 expr 8*$f1*$f1*$f1*$f1-8*$f1*$f1+1;
+#X obj 448 582 expr 32*$f1*$f1*$f1*$f1*$f1*$f1 -48*$f1*$f1*$f1*$f1+18*$f1*$f1-1
+;
+#X text 641 622 6th C.P. and basta.;
+#X obj 83 92 t b b;
+#X obj 155 117 f;
+#X obj 193 117 + 1;
+#X msg 177 94 0;
+#X obj 83 115 until;
+#X obj 155 147 t f f;
+#X obj 82 143 sel 258;
+#X obj 83 73 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 30 174 expr ($f1-129)/128;
+#X obj 83 50 inlet;
+#X obj 30 198 expr 2*$f1*$f1-1;
+#X text 203 198 2nd C.P.;
+#X text 309 410 3rd C.P.;
+#X text 331 660 4th C.P.;
+#X text 613 357 5th C.P.;
+#X text 259 51 This patch computes Chebychev polynomials and stores
+them in a wavetable for use later.;
+#X obj 56 224 tabwrite \$0-table;
+#X obj 114 436 tabwrite \$0-table;
+#X obj 144 666 tabwrite \$0-table;
+#X obj 477 624 tabwrite \$0-table;
+#X obj 417 360 tabwrite \$0-table;
+#X connect 0 0 4 0;
+#X connect 0 1 3 0;
+#X connect 1 0 2 0;
+#X connect 1 0 5 0;
+#X connect 1 0 6 0;
+#X connect 2 0 1 1;
+#X connect 3 0 1 1;
+#X connect 4 0 1 0;
+#X connect 5 0 9 0;
+#X connect 5 1 63 1;
+#X connect 6 0 4 1;
+#X connect 8 0 0 0;
+#X connect 9 0 42 0;
+#X connect 10 0 8 0;
+#X connect 11 0 15 0;
+#X connect 11 1 14 0;
+#X connect 12 0 13 0;
+#X connect 12 0 16 0;
+#X connect 12 0 17 0;
+#X connect 13 0 12 1;
+#X connect 14 0 12 1;
+#X connect 15 0 12 0;
+#X connect 16 0 19 0;
+#X connect 16 1 64 1;
+#X connect 17 0 15 1;
+#X connect 18 0 11 0;
+#X connect 19 0 43 0;
+#X connect 20 0 18 0;
+#X connect 21 0 25 0;
+#X connect 21 1 24 0;
+#X connect 22 0 23 0;
+#X connect 22 0 26 0;
+#X connect 22 0 27 0;
+#X connect 23 0 22 1;
+#X connect 24 0 22 1;
+#X connect 25 0 22 0;
+#X connect 26 0 30 0;
+#X connect 26 1 66 1;
+#X connect 27 0 25 1;
+#X connect 28 0 66 0;
+#X connect 29 0 21 0;
+#X connect 30 0 28 0;
+#X connect 31 0 29 0;
+#X connect 32 0 36 0;
+#X connect 32 1 35 0;
+#X connect 33 0 34 0;
+#X connect 33 0 37 0;
+#X connect 33 0 38 0;
+#X connect 34 0 33 1;
+#X connect 35 0 33 1;
+#X connect 36 0 33 0;
+#X connect 37 0 40 0;
+#X connect 37 1 65 1;
+#X connect 38 0 36 1;
+#X connect 39 0 32 0;
+#X connect 40 0 44 0;
+#X connect 41 0 39 0;
+#X connect 42 0 63 0;
+#X connect 43 0 64 0;
+#X connect 44 0 65 0;
+#X connect 46 0 50 0;
+#X connect 46 1 49 0;
+#X connect 47 0 48 0;
+#X connect 47 0 51 0;
+#X connect 47 0 52 0;
+#X connect 48 0 47 1;
+#X connect 49 0 47 1;
+#X connect 50 0 47 0;
+#X connect 51 0 54 0;
+#X connect 51 1 62 1;
+#X connect 52 0 50 1;
+#X connect 53 0 46 0;
+#X connect 54 0 56 0;
+#X connect 55 0 53 0;
+#X connect 56 0 62 0;
+#X restore 89 339 pd make-table \$0;
+#X obj 272 311 *~;
+#X obj 272 336 *~ 128;
+#X obj 272 360 +~ 129;
+#X obj 272 158 inlet~;
+#X obj 313 247 smoother 50;
+#X obj 214 116 moonlib/mknob 25 100 0 1 0 0 \$0-indexsnd \$0-indexrcv
+index -2 -6 0 8 -92416 -195136 -1 1500 1;
+#X obj 121 181 hradio 15 1 0 5 empty empty empty 0 -8 0 10 -137536
+-235626 -1 3;
+#X obj 113 214 sel 0 1 2 3 4;
+#X obj 271 448 outlet~;
+#X obj 399 314 *~;
+#X obj 399 339 *~ 128;
+#X obj 399 363 +~ 129;
+#X obj 399 161 inlet~;
+#X obj 445 160 inlet~;
+#X text 441 128 index control;
+#X obj 420 251 scalearound1;
+#X obj 303 291 *~;
+#X obj 213 159 moonlib/mknob 25 100 0 0.7 0 0 \$0-indexmodsnd \$0-indexmodrcv
+indexMod -2 -6 0 8 -157628 -203253 -1 9900 1;
+#X obj 353 291 *~;
+#X obj 400 455 outlet~;
+#X obj 272 384 tabread4~ \$0-table;
+#X obj 399 387 tabread4~ \$0-table;
+#X obj 58 518 canvasargs;
+#X obj 58 475 pack \$1 f f;
+#X obj 37 10 loadbang;
+#X obj 7 65 f \$1;
+#X obj 47 65 f \$2;
+#X obj 87 65 f \$3;
+#X obj 37 32 t b b b;
+#X msg 58 496 list \$1 \$2 \$3;
+#X obj 26 374 r savemessage;
+#X obj 35 421 r \$0-indexsnd;
+#X obj 132 422 r \$0-indexmodsnd;
+#X obj 60 449 t b f;
+#X obj 106 449 t b f;
+#X text 258 11 creation arguments \; 1 panel index \; 2 index multiplier
+(top knob) \; 3 index modifier (bottom knob), f 19;
+#X text 396 10 inlets \; 1-2: input L-R \; 3: index CV (-1 to 1) \;
+;
+#X obj 272 409 hip~ 25;
+#X obj 399 412 hip~ 25;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 23 0;
+#X connect 6 0 3 0;
+#X connect 7 0 19 0;
+#X connect 7 0 21 0;
+#X connect 8 0 7 0;
+#X connect 9 0 10 0;
+#X connect 10 0 2 0;
+#X connect 10 1 2 1;
+#X connect 10 2 2 2;
+#X connect 10 3 2 3;
+#X connect 10 4 2 4;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 24 0;
+#X connect 15 0 12 0;
+#X connect 16 0 18 0;
+#X connect 18 0 19 1;
+#X connect 18 0 21 1;
+#X connect 19 0 3 1;
+#X connect 20 0 18 1;
+#X connect 21 0 12 1;
+#X connect 23 0 40 0;
+#X connect 24 0 41 0;
+#X connect 26 0 32 0;
+#X connect 27 0 31 0;
+#X connect 29 0 8 0;
+#X connect 30 0 20 0;
+#X connect 31 0 28 0;
+#X connect 31 1 29 0;
+#X connect 31 2 30 0;
+#X connect 32 0 25 0;
+#X connect 33 0 26 0;
+#X connect 34 0 36 0;
+#X connect 35 0 37 0;
+#X connect 36 0 26 0;
+#X connect 36 1 26 1;
+#X connect 37 0 26 0;
+#X connect 37 1 26 2;
+#X connect 40 0 11 0;
+#X connect 41 0 22 0;
+#X coords 0 -1 1 1 150 100 2 100 100;

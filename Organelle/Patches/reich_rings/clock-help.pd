@@ -1,0 +1,42 @@
+#N canvas 0 22 481 385 10;
+#X obj 147 67 clock 0 120 0 2 3 4;
+#X obj 169 21 cnv 15 100 30 empty empty empty 20 12 0 14 -261474 -66577
+0;
+#X obj 328 22 cnv 15 100 60 empty empty ECL 30 16 0 20 -261691 -191155
+0;
+#X text 344 50 madam data;
+#X text 361 63 2017;
+#X text 178 28 Clock module;
+#X obj 147 127 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 194 128 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 242 128 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 290 128 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 257 156 cnv 15 200 150 empty empty empty 20 12 0 14 -231988
+-66577 0;
+#X obj 18 156 cnv 15 230 150 empty empty empty 20 12 0 14 -195321 -66577
+0;
+#X text 26 162 Inlets;
+#X text 266 162 Outlets;
+#X text 26 181 1 Time multiplier. Sending a number to this inlet multiplies
+the time by this amount. For example \, sending it 0.5 will make the
+clock tick twice as fast \, and sending it a 2 will make it tick half
+as fast., f 33;
+#X text 265 180 1 16th notes. For the given bpm \, 4 bangs will be
+output each beat \; 2 \, 3 \, 4 Clock dividers. A bang will be output
+at these outlets every n bangs at the leftmost outlet \, where n is
+the number in the box., f 28;
+#X text 25 71 click to turn on ->;
+#X msg 96 36 0.5;
+#X msg 127 35 2;
+#X msg 68 38 1;
+#X connect 0 0 6 0;
+#X connect 0 1 7 0;
+#X connect 0 2 8 0;
+#X connect 0 3 9 0;
+#X connect 17 0 0 0;
+#X connect 18 0 0 0;
+#X connect 19 0 0 0;

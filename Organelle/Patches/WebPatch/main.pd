@@ -1,0 +1,14 @@
+#N canvas 950 0 958 1004 16;
+#X declare -lib moocow;
+#X obj 166 100 httpget;
+#X msg 273 17 https://s3-us-west-2.amazonaws.com/soundfrompi/podcastFeed.xml
+;
+#X obj 285 530 detox;
+#X obj 253 659 print;
+#X obj 253 247 print;
+#X connect 0 2 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 2 1 3 0;
+#X connect 2 2 3 0;
+#X connect 2 3 3 0;

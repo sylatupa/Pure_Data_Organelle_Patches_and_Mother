@@ -1,0 +1,22 @@
+#N canvas 282 153 2229 1121 10;
+#X obj 41 43 pulso;
+#X obj 152 348 mixout;
+#X obj 1367 42 utilmenu;
+#X obj 50 176 coral;
+#X obj 50 293;
+#X obj 512 185 pulseq88;
+#X obj 802 388 etonoise;
+#X obj 37 37;
+#X obj 1158 439 coral;
+#X obj 646 454 tgl 50 0 empty empty empty 17 7 0 100 -262144 -1 -1
+0 1;
+#X obj 667 341 r aux;
+#X obj 655 412 sel 1;
+#X obj 680 369 r fs;
+#X connect 3 0 1 0;
+#X connect 3 0 4 0;
+#X connect 5 0 1 2;
+#X connect 6 0 1 1;
+#X connect 10 0 11 0;
+#X connect 11 0 9 0;
+#X connect 12 0 11 0;

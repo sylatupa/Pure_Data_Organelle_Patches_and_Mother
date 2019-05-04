@@ -1,0 +1,71 @@
+#N canvas 0 54 1024 546 10;
+#X obj 102 22 cnv 10 81 636 empty empty empty 20 12 0 14 -1 -66577
+0;
+#X obj 104 48 cnv 8 8 8 empty empty generadores: 0 5 1 9 -1 -162280
+0;
+#X obj 104 68 cnv 8 8 8 empty empty coral 0 5 1 9 -1 -3707 0;
+#X obj 104 78 cnv 8 8 8 empty empty droner 0 5 1 9 -1 -3707 0;
+#X obj 104 88 cnv 8 8 8 empty empty etonoise 0 5 1 9 -1 -3707 0;
+#X obj 104 178 cnv 8 8 8 empty empty ritmicon 0 5 1 9 -1 -3707 0;
+#X obj 104 198 cnv 8 8 8 empty empty procesadores: 0 5 1 9 -1 -162280
+0;
+#X obj 104 208 cnv 8 8 8 empty empty modam 0 5 1 9 -1 -3707 0;
+#X obj 104 248 cnv 8 8 8 empty empty modcross 0 5 1 9 -1 -3707 0;
+#X obj 104 258 cnv 8 8 8 empty empty modcrush 0 5 1 9 -1 -3707 0;
+#X obj 104 308 cnv 8 8 8 empty empty modfm 0 5 1 9 -1 -3707 0;
+#X obj 104 298 cnv 8 8 8 empty empty modfilter 0 5 1 9 -1 -3707 0;
+#X obj 104 408 cnv 8 8 8 empty empty modring 0 5 1 9 -1 -3707 0;
+#X obj 104 418 cnv 8 8 8 empty empty modtrash 0 5 1 9 -1 -3707 0;
+#X obj 104 388 cnv 8 8 8 empty empty modquad 0 5 1 9 -1 -3707 0;
+#X obj 104 368 cnv 8 8 8 empty empty modpan 0 5 1 9 -1 -3707 0;
+#X obj 104 458 cnv 8 8 8 empty empty secuenciadores: 0 5 1 9 -1 -162280
+0;
+#X obj 104 518 cnv 8 8 8 empty empty seq16 0 5 1 9 -1 -3707 0;
+#X obj 104 268 cnv 8 8 8 empty empty moddrips 0 5 1 9 -1 -3707 0;
+#X obj 104 428 cnv 8 8 8 empty empty modtremolo 0 5 1 9 -1 -3707 0
+;
+#X obj 103 30 cnv 8 8 8 empty empty Proceso.v0.10 0 5 1 11 -1 -3707
+0;
+#X obj 104 218 cnv 8 8 8 empty empty modcassette 0 5 1 9 -1 -3707 0
+;
+#X obj 104 288 cnv 8 8 8 empty empty modexpan 0 5 1 9 -1 -3707 0;
+#X obj 104 228 cnv 8 8 8 empty empty modchain 0 5 1 9 -1 -3707 0;
+#X obj 104 488 cnv 8 8 8 empty empty octosignal 0 5 1 9 -1 -3707 0
+;
+#X obj 104 358 cnv 8 8 8 empty empty modjetone 0 5 1 9 -1 -3707 0;
+#X obj 104 468 cnv 8 8 8 empty empty inercia 0 5 1 9 -1 -3707 0;
+#X obj 104 168 cnv 8 8 8 empty empty ripio 0 5 1 9 -1 -3707 0;
+#X obj 104 508 cnv 8 8 8 empty empty poliritmo 0 5 1 9 -1 -3707 0;
+#X obj 104 58 cnv 8 8 8 empty empty atmos 0 5 1 9 -1 -3775 0;
+#X obj 104 338 cnv 8 8 8 empty empty modgarden 0 5 1 9 -1 -3775 0;
+#X obj 104 238 cnv 8 8 8 empty empty modcrack 0 5 1 9 -1 -3707 0;
+#X obj 104 278 cnv 8 8 8 empty empty modenv 0 5 1 9 -1 -3707 0;
+#X obj 104 348 cnv 8 8 8 empty empty modgitch 0 5 1 9 -1 -3707 0;
+#X obj 104 108 cnv 8 8 8 empty empty p66 0 5 1 9 -1 -3707 0;
+#X obj 104 498 cnv 8 8 8 empty empty pendular 0 5 1 9 -1 -3707 0;
+#X obj 104 138 cnv 8 8 8 empty empty plf 0 5 1 9 -1 -3707 0;
+#X obj 104 148 cnv 8 8 8 empty empty pnz 0 5 1 9 -1 -3707 0;
+#X obj 104 478 cnv 8 8 8 empty empty gate16 0 5 1 9 -1 -3707 0;
+#X obj 104 118 cnv 8 8 8 empty empty phf 0 5 1 9 -1 -3707 0;
+#X obj 104 548 cnv 8 8 8 empty empty moduladores: 0 5 1 9 -1 -162280
+0;
+#X obj 104 568 cnv 8 8 8 empty empty module 0 5 1 9 -1 -3707 0;
+#X obj 104 578 cnv 8 8 8 empty empty modhold 0 5 1 9 -1 -3707 0;
+#X obj 104 588 cnv 8 8 8 empty empty modphase 0 5 1 9 -1 -3707 0;
+#X obj 104 598 cnv 8 8 8 empty empty modrest 0 5 1 9 -1 -3707 0;
+#X obj 104 608 cnv 8 8 8 empty empty modwave 0 5 1 9 -1 -3707 0;
+#X obj 104 328 cnv 8 8 8 empty empty modfracta 0 5 1 9 -1 -3707 0;
+#X obj 104 558 cnv 8 8 8 empty empty converso 0 5 1 9 -1 -3707 0;
+#X obj 104 98 cnv 8 8 8 empty empty microfile 0 5 1 9 -1 -3707 0;
+#X obj 104 158 cnv 8 8 8 empty empty pulseq88 0 5 1 9 -1 -3707 0;
+#X obj 104 628 cnv 8 8 8 empty empty utilidades: 0 5 1 9 -1 -162280
+0;
+#X obj 104 638 cnv 8 8 8 empty empty mixout 0 5 1 9 -1 -3707 0;
+#X obj 104 648 cnv 8 8 8 empty empty pulso 0 5 1 9 -1 -3707 0;
+#X obj 104 128 cnv 8 8 8 empty empty pinkosc 0 5 1 9 -1 -3707 0;
+#X obj 104 318 cnv 8 8 8 empty empty modflux 0 5 1 9 -1 -3707 0;
+#X obj 104 378 cnv 8 8 8 empty empty modpass 0 5 1 9 -1 -3707 0;
+#X obj 104 528 cnv 8 8 8 empty empty transit 0 5 1 9 -1 -3707 0;
+#X obj 104 398 cnv 8 8 8 empty empty modr2 0 5 1 9 -1 -3707 0;
+#X obj 104 438 cnv 8 8 8 empty empty refractor 0 5 1 9 -1 -3707 0;
+#X coords 0 -1 1 1 85 640 2 100 20;

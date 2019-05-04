@@ -1,0 +1,28 @@
+#N canvas 150 80 560 571 10;
+#X obj 71 405 vline~;
+#X obj 50 68 inlet;
+#X msg 71 356 1 10 \, 0 1003.88 10;
+#X obj 121 18 inlet;
+#X obj 138 119 pack 0 0;
+#X obj 85 511 outlet~;
+#X obj 115 40 unpack f f;
+#X msg 226 66 10 500;
+#X obj 69 248 bang;
+#X msg 164 147 set \, add2 1 \, add2 \$1 \, addcomma \, add2 0 \, add2
+\$2 \$1;
+#X obj 69 441 pow~ 2;
+#X obj 89 69 inlet;
+#X text 147 241 inlet 1 - bang trigger inlet 2 - curve inlet 3 - attack
+and decay;
+#X connect 0 0 10 0;
+#X connect 1 0 8 0;
+#X connect 2 0 0 0;
+#X connect 3 0 6 0;
+#X connect 4 0 9 0;
+#X connect 6 0 4 0;
+#X connect 6 1 4 1;
+#X connect 7 0 6 0;
+#X connect 8 0 2 0;
+#X connect 9 0 2 0;
+#X connect 10 0 5 0;
+#X connect 11 0 10 1;

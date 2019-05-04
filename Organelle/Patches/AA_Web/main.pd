@@ -1,0 +1,18 @@
+#N canvas 1018 9 870 919 24;
+#X declare -lib moocow;
+#X obj 241 334 httpget;
+#X obj 212 432 print;
+#X msg 210 253 https://jsonplaceholder.typicode.com/albums;
+#X msg 128 21 https://jsonplaceholder.typicode.com/users;
+#X obj 236 512 print 22;
+#X obj 368 434 print 33;
+#X msg 86 169 https://guitarextended.wordpress.com/2012/08/28/running-pd-on-a-headless-raspberry-pi/
+;
+#X msg 186 70 http://ezequiellasnier.tumblr.com/;
+#X connect 0 0 1 0;
+#X connect 0 1 4 0;
+#X connect 0 2 5 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;

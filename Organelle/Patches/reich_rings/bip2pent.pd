@@ -1,0 +1,16 @@
+#N canvas -17 111 450 300 10;
+#X obj 157 96 int;
+#X obj 157 118 pent;
+#X obj 157 74 cyclone/scale -1 1 0 7;
+#X obj 124 25 inlet;
+#X obj 157 140 + \$1;
+#X obj 159 178 + 0;
+#X obj 265 34 inlet;
+#X obj 159 246 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 7 0;
+#X connect 6 0 5 1;

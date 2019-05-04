@@ -1,0 +1,50 @@
+#N canvas 0 82 829 479 10;
+#X obj 103 103 cnv 15 194 24 empty empty empty 20 12 0 14 -1 -66577
+0;
+#X obj 21 194 *~ -1;
+#X obj 21 162 inlet~;
+#X obj 21 216 outlet~;
+#X obj 101 162 inlet~;
+#X obj 100 195 delwrite~ \$0-converso 1000;
+#X obj 99 233 vd~ \$0-converso 500;
+#X obj 99 255 outlet~;
+#X obj 260 111 cnv 8 8 8 empty empty positivo 0 5 1 9 -1 -162280 0
+;
+#X obj 104 103 cnv 8 8 8 empty empty in 0 5 1 9 -1 -3707 0;
+#X obj 287 103 cnv 8 8 8 empty empty in 0 5 1 9 -1 -3707 0;
+#X obj 162 103 cnv 8 8 8 empty empty in 0 5 1 9 -1 -3707 0;
+#X obj 229 103 cnv 8 8 8 empty empty in 0 5 1 9 -1 -3707 0;
+#X obj 103 119 cnv 8 8 8 empty empty out 0 5 1 9 -1 -3707 0;
+#X obj 280 119 cnv 8 8 8 empty empty out 0 5 1 9 -1 -3707 0;
+#X obj 226 119 cnv 8 8 8 empty empty out 0 5 1 9 -1 -3707 0;
+#X obj 160 119 cnv 8 8 8 empty empty out 0 5 1 9 -1 -3707 0;
+#X obj 103 111 cnv 8 8 8 empty empty inversión 0 5 1 9 -1 -162280
+0;
+#X obj 155 111 cnv 8 8 8 empty empty delay 0 5 1 9 -1 -162280 0;
+#X obj 181 108 cnv 8 34 16 empty empty empty 20 12 0 14 -162280 -66577
+0;
+#X floatatom 182 109 5 0 0 0 - - -, f 5;
+#X obj 182 13 loadbang;
+#X msg 182 35 500;
+#X obj 280 195 *~ 100;
+#X obj 281 162 inlet~;
+#X obj 280 217 clip~ -1 1;
+#X obj 280 239 outlet~;
+#X obj 226 111 cnv 8 8 8 empty empty clip 0 5 1 9 -1 -162280 0;
+#X obj 371 162 inlet~;
+#X obj 371 184 *~;
+#X obj 371 206 outlet~;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 4 0 5 0;
+#X connect 6 0 7 0;
+#X connect 20 0 6 0;
+#X connect 21 0 22 0;
+#X connect 22 0 20 0;
+#X connect 23 0 25 0;
+#X connect 24 0 23 0;
+#X connect 25 0 26 0;
+#X connect 28 0 29 0;
+#X connect 28 0 29 1;
+#X connect 29 0 30 0;
+#X coords 0 -1 1 1 200 30 2 100 100;

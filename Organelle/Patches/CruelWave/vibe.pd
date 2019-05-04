@@ -1,0 +1,47 @@
+#N canvas 0 50 1440 787 10;
+#X obj 63 374 vd~ vibrato;
+#X obj 62 328 *~ 1;
+#X obj 173 195 vsl 15 128 1 5 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 63 350 +~ 2;
+#X obj 117 136 delwrite~ vibrato 50;
+#X obj 63 287 osc~ 2;
+#X obj 63 151 vsl 15 128 0.1 5 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 1037 1;
+#X floatatom 217 381 5 0 0 0 - - -, f 5;
+#X obj 217 359 +;
+#X obj 174 333 * 2;
+#X floatatom 105 265 5 0 0 0 - - -, f 5;
+#X text 254 382 <-- Maximum length of the delay line (= added latency!)
+;
+#X text 202 266 <-- Depth (change the length of the delay line);
+#X text 89 168 <-- Speed (frequency of the LFO);
+#X text 183 448 Pierre Massat \, GuitarExtended \, 2012;
+#X obj 51 27 inlet~;
+#X obj 64 415 outlet~;
+#X obj 170 56 inlet;
+#X obj 268 78 inlet;
+#X obj 379 106 loadbang;
+#X floatatom 247 307 5 0 0 0 - - -, f 5;
+#X msg 381 136 1.25;
+#X msg 345 80 0.5;
+#X connect 0 0 16 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 1;
+#X connect 2 0 8 1;
+#X connect 2 0 9 0;
+#X connect 2 0 20 0;
+#X connect 3 0 0 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 6 0 10 0;
+#X connect 8 0 7 0;
+#X connect 9 0 3 1;
+#X connect 9 0 8 0;
+#X connect 15 0 4 0;
+#X connect 17 0 6 0;
+#X connect 18 0 2 0;
+#X connect 19 0 21 0;
+#X connect 19 0 22 0;
+#X connect 21 0 2 0;
+#X connect 22 0 6 0;

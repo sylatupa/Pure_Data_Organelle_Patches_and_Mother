@@ -1,0 +1,44 @@
+#N canvas 312 133 752 300 10;
+#X obj 101 101 cnv 15 98 38 empty empty empty 20 12 0 14 -261169 -66577
+0;
+#X obj 257 97 openpanel;
+#X obj 104 103 bng 35 250 50 0 empty \$0-recordbutton rec 8 17 0 11
+-261681 -166441 -260097;
+#X obj 258 124 symbol hi;
+#X symbolatom 142 118 8 0 0 2 filename - -, f 8;
+#X msg 261 175 open \$1;
+#X obj 218 60 inlet~;
+#X obj 297 60 inlet~;
+#X obj 259 237 writesf~ 2;
+#X obj 138 190 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 149 209 sel 0 1;
+#X obj 155 261 s \$0-recordbutton;
+#X msg 214 203 stop;
+#X obj 217 225 print;
+#X msg 378 111 start;
+#X obj 351 88 t b b;
+#X msg 5 210 color 34;
+#X msg 95 230 color 13;
+#X obj 258 145 makefilename /Users/ada/Documents/Pd/recordings/%s.wav
+;
+#X connect 2 0 9 0;
+#X connect 3 0 18 0;
+#X connect 4 0 3 1;
+#X connect 5 0 8 0;
+#X connect 5 0 13 0;
+#X connect 6 0 8 0;
+#X connect 7 0 8 1;
+#X connect 9 0 10 0;
+#X connect 10 0 12 0;
+#X connect 10 0 16 0;
+#X connect 10 1 15 0;
+#X connect 10 1 17 0;
+#X connect 12 0 8 0;
+#X connect 14 0 8 0;
+#X connect 15 0 14 0;
+#X connect 15 1 3 0;
+#X connect 16 0 11 0;
+#X connect 17 0 11 0;
+#X connect 18 0 5 0;
+#X coords 0 -1 1 1 100 40 2 100 100;

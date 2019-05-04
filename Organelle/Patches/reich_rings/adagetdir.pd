@@ -1,0 +1,6 @@
+#N canvas 0 22 450 300 10;
+#X obj 116 57 inlet;
+#X obj 119 199 outlet;
+#X obj 128 115 ggee/getdir 1;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;

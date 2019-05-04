@@ -1,0 +1,168 @@
+#N canvas 489 70 625 468 10;
+#X obj 102 102 cnv 15 146 116 empty empty empty 20 12 0 14 -195769
+-66577 0;
+#X msg 498 182 \; pd dsp \$1;
+#X obj 143 111 tgl 28 0 \$0-dspsnd \$0-dsprcv dsp 3 6 0 10 -261495
+-259037 -99849 1 1;
+#X obj 363 312 dac~;
+#X obj 408 158 inlet~;
+#X obj 352 157 inlet~;
+#X obj 108 112 vsl 25 98 0.01 1.1 1 0 \$0-volsnd \$0-volrcv vol 5 4
+0 10 -261552 -184321 -1 7600 1;
+#X obj 352 279 *~;
+#X obj 408 280 *~;
+#X floatatom 204 133 5 0 0 2 cpu #0-cpu -, f 5;
+#X obj 20 159 cputime;
+#X obj 20 19 loadbang;
+#X msg 20 47 1;
+#X obj 20 131 t b b;
+#X obj 20 219 * 0.1;
+#X obj 20 188 int;
+#X obj 143 141 tgl 28 0 \$0-kbsnd \$0-kbrcv kb 4 7 0 10 -260832 -261752
+-1 0 1;
+#X obj 145 279 s keycontrol;
+#X text 325 37 most of the buttons should be self explanatory. 'kb'
+turns keyboard control on and off globally., f 36;
+#X text 317 112 madam data apr 2017;
+#X obj 204 153 bng 15 250 50 0 \$0-cfgbang empty conf 17 7 0 10 -259613
+-261824 -1;
+#X obj 20 250 s \$0-cpu;
+#N canvas 156 67 337 244 config 0;
+#X obj 42 28 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 42 152 s recordingslocation;
+#X obj 42 88 openpanel;
+#X obj 42 110 moonlib/basedir;
+#X obj 42 132 unpack s s;
+#X text 60 28 click to set recordings folder location. Select any file
+in the folder to register that folder as the save location., f 36
+;
+#X text 180 138 make sure to open the output abstraction and save it
+once you've done this!, f 22;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 1 1 0;
+#X restore 233 403 pd config;
+#X obj 146 329 r \$0-cfgbang;
+#X msg 146 351 \; pd-config vis 1;
+#N canvas 0 22 593 382 recorder 0;
+#X obj 101 101 cnv 15 98 38 empty empty empty 20 12 0 14 -261169 -66577
+0;
+#X obj 257 97 openpanel;
+#X obj 104 103 bng 35 250 50 0 empty \$0-recordbutton rec 8 17 0 11
+-261681 -166441 -260097;
+#X obj 258 124 symbol hi;
+#X symbolatom 142 118 8 0 0 2 filename - -, f 8;
+#X msg 261 175 open \$1;
+#X obj 218 60 inlet~;
+#X obj 297 60 inlet~;
+#X obj 259 237 writesf~ 2;
+#X obj 138 190 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 149 209 sel 0 1;
+#X obj 155 261 s \$0-recordbutton;
+#X msg 214 203 stop;
+#X obj 217 225 print;
+#X msg 378 111 start;
+#X obj 351 88 t b b;
+#X msg 5 210 color 34;
+#X msg 95 230 color 13;
+#X obj 258 145 makefilename /Users/ada/Documents/Pd/recordings/%s.wav
+;
+#X obj 129 32 loadbang;
+#X msg 129 54 set myfile;
+#X obj 423 35 r recordingslocation;
+#X msg 431 118 set /Users/ada/Documents/Pd/recordings/%s.wav;
+#X obj 423 57 t b s;
+#X msg 444 93 set set \$1/%s.wav;
+#X obj 356 23 loadbang;
+#X connect 2 0 9 0;
+#X connect 3 0 18 0;
+#X connect 4 0 3 1;
+#X connect 5 0 8 0;
+#X connect 5 0 13 0;
+#X connect 6 0 8 0;
+#X connect 7 0 8 1;
+#X connect 9 0 10 0;
+#X connect 10 0 12 0;
+#X connect 10 0 16 0;
+#X connect 10 1 15 0;
+#X connect 10 1 17 0;
+#X connect 12 0 8 0;
+#X connect 14 0 8 0;
+#X connect 15 0 14 0;
+#X connect 15 1 3 0;
+#X connect 16 0 11 0;
+#X connect 17 0 11 0;
+#X connect 18 0 5 0;
+#X connect 19 0 20 0;
+#X connect 20 0 4 0;
+#X connect 21 0 23 0;
+#X connect 22 0 18 0;
+#X connect 23 0 22 0;
+#X connect 23 1 24 0;
+#X connect 24 0 22 0;
+#X connect 25 0 22 0;
+#X coords 0 -1 1 1 100 40 1 100 100;
+#X restore 143 173 pd recorder;
+#X obj 173 141 tgl 28 0 \$0-allguissnd \$0-allguisrcv gui 3 6 0 10
+-260336 -136768 -99849 1 1;
+#X obj 498 152 r \$0-dspsnd;
+#X obj 246 328 r \$0-allguissnd;
+#X obj 246 350 s allguis;
+#X obj 145 249 r \$0-kbsnd;
+#X obj 20 103 metro 1000;
+#X obj 419 192 r \$0-volsnd;
+#X obj 105 277 vu 8 80 \$0-vurcv empty -1 -8 0 10 -141547 -1 0 0;
+#X obj 527 295 r allguis;
+#X obj 362 248 smoother 70;
+#X obj 436 247 smoother 70;
+#X obj 419 214 - 0.01;
+#N canvas 0 22 450 300 vu 0;
+#X obj 132 107 env~;
+#X obj 132 129 - 90;
+#X obj 132 184 s \$0-vurcv;
+#X obj 132 151 spigot;
+#X obj 132 85 *~ 0.5;
+#X obj 132 50 inlet~;
+#X obj 272 46 inlet;
+#X obj 272 68 switch~;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 3 0 2 0;
+#X connect 4 0 0 0;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 6 0 3 1;
+#X restore 395 364 pd vu;
+#X obj 93 65 s \$0-allguisrcv;
+#X text 202 105 ECL 0.3;
+#X connect 4 0 8 0;
+#X connect 5 0 7 0;
+#X connect 7 0 3 0;
+#X connect 7 0 25 0;
+#X connect 7 0 38 0;
+#X connect 8 0 3 1;
+#X connect 8 0 25 1;
+#X connect 8 0 38 0;
+#X connect 10 0 15 0;
+#X connect 11 0 12 0;
+#X connect 12 0 31 0;
+#X connect 12 0 39 0;
+#X connect 13 0 10 0;
+#X connect 13 1 10 1;
+#X connect 14 0 21 0;
+#X connect 15 0 14 0;
+#X connect 23 0 24 0;
+#X connect 27 0 1 0;
+#X connect 28 0 29 0;
+#X connect 30 0 17 0;
+#X connect 31 0 13 0;
+#X connect 32 0 37 0;
+#X connect 34 0 38 1;
+#X connect 35 0 7 1;
+#X connect 36 0 8 1;
+#X connect 37 0 36 0;
+#X connect 37 0 35 0;
+#X coords 0 -1 1 1 150 120 2 100 100;

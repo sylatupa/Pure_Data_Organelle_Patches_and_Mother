@@ -1,0 +1,9 @@
+#N canvas 0 22 450 300 10;
+#X obj 142 207 text set \$1;
+#X obj 118 33 inlet;
+#X obj 222 114 text size \$1;
+#X obj 118 55 t l b;
+#X connect 1 0 3 0;
+#X connect 2 0 0 1;
+#X connect 3 0 0 0;
+#X connect 3 1 2 0;

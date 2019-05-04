@@ -1,0 +1,42 @@
+#N canvas 448 23 497 622 10;
+#X obj 264 237 cnv 15 100 60 empty empty empty 20 12 0 14 -231988 -66577
+0;
+#X obj 26 392 cnv 15 380 180 empty empty empty 20 12 0 14 -126015 -66577
+0;
+#X obj 26 237 cnv 15 230 150 empty empty empty 20 12 0 14 -195321 -66577
+0;
+#X obj 178 61 oscblpanel 0 2.79423 1.26222 0.0222222 0 0 0;
+#X obj 133 21 cnv 15 195 30 empty empty empty 20 12 0 14 -261474 -66577
+0;
+#X text 141 29 Bandlimited Oscillator module;
+#X text 32 242 Inlets;
+#X text 34 263 1 Frequency - signal modulates the pitch of the oscillator
+\; 2 Wave folding - signal modulates amount of wave folding \; 3 Detune
+- signal modulates the amount of stereo detuning \; 4 Phase - number
+between 0 and 1 resets the phase of both L and R oscillators \;, f
+36;
+#X text 272 243 Outlets;
+#X text 271 261 1 Audio L \; 2 Audio R \;;
+#X text 33 400 Controls;
+#X obj 338 22 cnv 15 100 60 empty empty ECL 30 16 0 20 -261691 -191155
+0;
+#X text 355 50 madam data;
+#X text 371 63 2017;
+#X text 28 63 This is basically the same thing as oscpanel \, but uses
+upsampling and filtering to reduce aliasing distortion. It is hence
+a lot more cpu intensive than oscpanel., f 24;
+#X text 34 421 1 Frequency knob. Pretty self-explanatory \; 2 Fold
+knob. Amount of wave folding applied to the base sine wave. To the
+right = more harmonics \, more aliasing noise \; 3 Stereo detune knob.
+Makes the L and R oscillators play different pitches \; 4 Frequency
+mod amount knob. How much the signal from the 1st inlet affects the
+frequency \; 5 Fold mod amount knob. How much the signal from the 2nd
+inlet affects the amount of wave folding \; 6 Rate switch. Switches
+between audio rate (27Hz-17kHz) and LFO rate (0.03Hz-40Hz);
+#X obj 188 186 *~ 0.1;
+#X obj 259 186 *~ 0.1;
+#X obj 217 210 dac~;
+#X connect 3 0 16 0;
+#X connect 3 1 17 0;
+#X connect 16 0 18 0;
+#X connect 17 0 18 1;

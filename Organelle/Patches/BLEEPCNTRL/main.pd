@@ -1,0 +1,9 @@
+#N canvas 463 259 1098 561 10;
+#X obj 41 43 pulso;
+#X obj 152 348 mixout;
+#X obj 50 176 coral;
+#X obj 512 185 pulseq88;
+#X obj 613 331 etonoise;
+#X connect 2 0 1 0;
+#X connect 3 0 1 1;
+#X connect 4 0 1 2;

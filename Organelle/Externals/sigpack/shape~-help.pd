@@ -1,0 +1,79 @@
+#N canvas 407 81 557 534 10;
+#X obj 0 0 cnv 15 552 40 empty empty shape~ 3 12 0 18 -204280 -1 0
+;
+#X obj 0 353 cnv 3 550 3 empty empty inlets 8 12 0 13 -228856 -1 0
+;
+#X obj 0 425 cnv 3 550 3 empty empty outlets 8 12 0 13 -228856 -1 0
+;
+#X obj 0 462 cnv 3 550 3 empty empty arguments 8 12 0 13 -228856 -1
+0;
+#X obj 79 434 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 79 367 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 0 496 cnv 15 552 21 empty empty empty 20 12 0 14 -233017 -33289
+0;
+#N canvas 238 349 428 75 Related_objects 0;
+#X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
+#X text 6 1 Related Objects;
+#X restore 206 498 pd Related_objects;
+#N canvas 565 588 379 261 META 0;
+#X text 12 25 LICENSE GPL v2;
+#X text 12 166 MAINTAINER Fred Jan Kraan <fjkraan@xs4all.nl>;
+#X text 12 83 INLET_0 signal;
+#X text 12 123 OUTLET_0 signal;
+#X text 12 187 HELP_PATCH_AUTHORS Martin Weiss 2003 Updated by Fred
+Jan Kraan 2016-02.;
+#X text 12 64 VERSION 0.03;
+#X text 11 103 INLET_1 float;
+#X text 12 5 KEYWORDS signal saturation;
+#X text 12 45 DESCRIPTION signal saturation;
+#X text 12 143 AUTHOR Martin Weiss;
+#X restore 502 500 pd META;
+#X obj 96 277 output~;
+#X obj 331 236 metro 100;
+#X obj 331 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 107 367 signal;
+#X obj 79 392 cnv 17 3 17 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X text 107 392 signal;
+#X obj 95 73 osc~ 440;
+#X text 107 434 signal;
+#N canvas 584 604 450 300 view 0;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$0-shape 100 float 0;
+#X coords 0 1 99 -1 200 140 1 0 0;
+#X restore 128 78 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$0-clean 100 float 0;
+#X coords 0 1 100 -1 200 20 1 0 0;
+#X restore 128 222 graph;
+#X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
+#X text 6 1 waveform viewer;
+#X text 14 266 array updates can cause dropouts when visible;
+#X text 118 77 1;
+#X text 112 205 -1;
+#X restore 331 299 pd view waveform;
+#X text 164 434 - processed signal;
+#X obj 331 257 tabwrite~ \$0-clean;
+#X floatatom 201 90 5 -10 10 0 - - -, f 5;
+#X text 162 367 - signal to process;
+#X obj 505 6 shape~;
+#X text 8 23 reshape input by an exponential function, f 75;
+#X text 96 471 default shape value, f 71;
+#X obj 96 175 sigpack/shape~ 0.5;
+#X obj 331 278 tabwrite~ \$0-shape;
+#X obj 204 71 hsl 128 15 0 10 0 0 empty empty shape 10 8 0 10 -262144
+-1 -1 12700 1;
+#X text 163 391 - shape value. Range: 0 - 10;
+#X connect 10 0 19 0;
+#X connect 10 0 26 0;
+#X connect 11 0 10 0;
+#X connect 15 0 19 0;
+#X connect 15 0 25 0;
+#X connect 20 0 25 1;
+#X connect 25 0 9 0;
+#X connect 25 0 9 1;
+#X connect 25 0 26 0;
+#X connect 27 0 20 0;

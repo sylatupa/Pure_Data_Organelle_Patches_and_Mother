@@ -1,0 +1,183 @@
+#N canvas 399 28 773 575 10;
+#X obj 102 102 cnv 15 146 96 empty empty empty 20 12 0 14 -180160 -66577
+0;
+#N canvas 0 22 512 322 (subpatch) 0;
+#X array \$0-env 259 float 1;
+#A 0 0.0410958 0.0410958 0.0410958 0.0684929 0.0684929 0.123287 0.123287
+0.123287 0.150684 0.155251 0.159817 0.205479 0.205479 0.219177 0.223743
+0.22831 0.246574 0.255707 0.264839 0.28767 0.28767 0.28767 0.369862
+0.369862 0.410957 0.415524 0.42009 0.438355 0.442921 0.447487 0.465752
+0.472601 0.47945 0.488583 0.497715 0.547943 0.552509 0.557076 0.589039
+0.595888 0.643833 0.643833 0.643833 0.67123 0.675797 0.680363 0.698628
+0.698628 0.726025 0.726025 0.726025 0.753422 0.753422 0.753422 0.794518
+0.794518 0.808216 0.812782 0.817349 0.835613 0.84018 0.844746 0.849312
+0.853878 0.858444 0.86301 0.86986 0.904106 0.908672 0.913239 0.917805
+0.917805 0.917805 0.931503 0.938353 0.958901 0.958901 0.958901 0.972599
+0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599
+0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599
+0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599
+0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599
+0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599
+0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599
+0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599
+0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599
+0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599
+0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599
+0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599
+0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599
+0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599
+0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599
+0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599 0.972599
+0.972599 0.972599 0.972599 0.972599 0.972599 0.9589 0.9589 0.9589 0.9589
+0.9589 0.958904 0.958904 0.958904 0.958904 0.958904 0.958904 0.958904
+0.958904 0.958904 0.958904 0.958904 0.958904 0.958904 0.945206 0.945206
+0.945206 0.945206 0.945206 0.945206 0.945206 0.945206 0.945206 0.945206
+0.945206 0.945206 0.945206 0.945206 0.945206 0.945206 0.945206 0.945206
+0.945206 0.945206 0.945206 0.945206 0.945206 0.945206 0.945206 0.945206
+0.945206 0.945206 0.945206 0.945206 0.945206 0.945206 0.945206 0.945206
+0.945206 0.945206 0.945206;
+#X coords 0 1 258 0 96 73 2 0 0;
+#X restore 103 103 graph;
+#X obj 357 46 inlet;
+#X obj 202 151 bng 25 250 50 0 empty empty tr 6 11 0 10 -81210 -261234
+-1;
+#X obj 331 258 line~;
+#X msg 355 231 0;
+#X obj 287 157 f 0.5;
+#X obj 299 203 t f b;
+#X obj 331 279 tabread4~ \$0-env;
+#X obj 231 106 vsl 15 67 1 15 1 1 \$0-levelsnd \$0-levelrcv empty 0
+-9 0 10 -133312 -1 -1 0 1;
+#X obj 295 321 *~;
+#X obj 243 286 smoother 40;
+#X obj 202 104 moonlib/mknob 25 100 5 4000 1 1 \$0-ratesnd \$0-ratercv
+empty -2 -6 0 8 -139257 -4160 -1 7600 1;
+#X obj 207 133 tgl 15 0 \$0-autotogglesnd \$0-autotogglercv empty 17
+7 0 10 -204800 -1 -1 0 1;
+#X obj 352 125 metro 150;
+#X obj 406 48 inlet~;
+#X obj 385 162 snapshot~;
+#X obj 372 185 cyclone/scale -1 1 0.25 1.75;
+#X obj 311 181 *;
+#X obj 384 385 outlet~ bipolar;
+#X obj 259 384 outlet~ unipolar;
+#X obj 378 337 *~ 2;
+#X obj 378 359 -~ 1;
+#N canvas 0 22 450 300 state_saving 0;
+#X obj 56 29 r \$0-ratesnd;
+#X obj 78 73 r \$0-autotogglesnd;
+#X obj 67 51 r \$0-levelsnd;
+#X obj 49 95 t b f;
+#X obj 73 124 t b f;
+#X obj 89 145 t b f;
+#X obj 54 203 outlet;
+#X obj 35 6 r savemessage;
+#X obj 213 73 r \$0-savefilename;
+#X obj 54 181 pack \$1 f f f s;
+#X obj 213 95 t b s;
+#X connect 0 0 3 0;
+#X connect 1 0 5 0;
+#X connect 2 0 4 0;
+#X connect 3 0 9 0;
+#X connect 3 1 9 1;
+#X connect 4 0 9 0;
+#X connect 4 1 9 2;
+#X connect 5 0 9 0;
+#X connect 5 1 9 3;
+#X connect 7 0 9 0;
+#X connect 8 0 10 0;
+#X connect 9 0 6 0;
+#X connect 10 0 9 0;
+#X connect 10 1 9 4;
+#X restore 35 301 pd state_saving;
+#X obj 35 323 canvasargs;
+#N canvas 518 75 450 300 state_loading 0;
+#X obj 80 131 s \$0-ratercv;
+#X obj 81 155 s \$0-levelrcv;
+#X obj 82 178 s \$0-autotogglercv;
+#X obj 65 35 loadbang;
+#X obj 88 242 s \$0-loadfile;
+#X obj 141 58 symbol \$5;
+#X obj 65 57 t b b;
+#X obj 65 81 pack \$1 \$2 \$3 \$4;
+#X obj 65 101 unpack f f f f;
+#X connect 3 0 6 0;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 6 1 5 0;
+#X connect 7 0 8 0;
+#X connect 8 1 0 0;
+#X connect 8 2 1 0;
+#X connect 8 3 2 0;
+#X restore 33 377 pd state_loading;
+#X obj 477 346 outlet trigger_through;
+#X obj 103 178 bng 18 250 50 0 \$0-savesnd empty save 19 7 0 10 -68268
+-65509 -1;
+#X obj 148 178 bng 18 250 50 0 \$0-loadsnd empty load 19 7 0 10 -153650
+-65509 -1;
+#X msg 300 232 256 \$1;
+#X symbolatom 195 181 8 0 0 0 - #0-filenamercv -, f 8;
+#N canvas 0 22 607 330 loading_savingfiles 0;
+#X obj 132 36 r \$0-savesnd;
+#X obj 132 99 savepanel;
+#X obj 249 172 s \$0-env;
+#X obj 130 161 moonlib/basedir;
+#X obj 130 183 s \$0-filenamercv;
+#X obj 8 147 s \$0-savefilename;
+#X obj 269 98 r \$0-loadfile;
+#X obj 383 39 r \$0-loadsnd;
+#X msg 241 145 write \$1;
+#X msg 320 143 read \$1;
+#X obj 383 101 openpanel;
+#X obj 132 58 adagetdir;
+#X obj 132 80 makefilename %s/wavetables/;
+#X obj 382 58 adagetdir;
+#X obj 382 80 makefilename %s/wavetables/;
+#X connect 0 0 11 0;
+#X connect 1 0 8 0;
+#X connect 1 0 3 0;
+#X connect 1 0 5 0;
+#X connect 3 0 4 0;
+#X connect 6 0 9 0;
+#X connect 6 0 3 0;
+#X connect 6 0 5 0;
+#X connect 7 0 13 0;
+#X connect 8 0 2 0;
+#X connect 9 0 2 0;
+#X connect 10 0 9 0;
+#X connect 10 0 5 0;
+#X connect 10 0 3 0;
+#X connect 11 0 12 0;
+#X connect 12 0 1 0;
+#X connect 13 0 14 0;
+#X connect 14 0 10 0;
+#X restore 440 515 pd loading_savingfiles;
+#X connect 2 0 3 0;
+#X connect 3 0 6 0;
+#X connect 3 0 16 0;
+#X connect 3 0 26 0;
+#X connect 4 0 8 0;
+#X connect 5 0 4 0;
+#X connect 6 0 14 1;
+#X connect 6 0 18 0;
+#X connect 7 0 29 0;
+#X connect 7 1 5 0;
+#X connect 8 0 10 0;
+#X connect 9 0 11 0;
+#X connect 10 0 20 0;
+#X connect 10 0 21 0;
+#X connect 11 0 10 1;
+#X connect 12 0 6 1;
+#X connect 13 0 14 0;
+#X connect 14 0 6 0;
+#X connect 14 0 16 0;
+#X connect 14 0 26 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 1;
+#X connect 18 0 7 0;
+#X connect 21 0 22 0;
+#X connect 22 0 19 0;
+#X connect 23 0 24 0;
+#X connect 29 0 4 0;
+#X coords 0 -1 1 1 150 100 2 100 100;

@@ -1,0 +1,30 @@
+#N canvas 15 23 429 521 10;
+#X obj 108 84 adsrpanel 0 5 1 0 /Users/adamadhiyatma/Documents/Pd/eclobjects/wavetables/decay1.txt
+;
+#X text 249 189 ^ trigger through for less mess (any trigger that goes
+in the left inlet comes out here), f 17;
+#X text 53 32 bang to trigger envelope, f 8;
+#X text 264 32 signal inlet modulates speed, f 11;
+#X obj 27 286 cnv 15 380 210 empty empty empty 20 12 0 14 -142592 -66577
+0;
+#X text 34 296 Controls;
+#X obj 148 21 cnv 15 80 30 empty empty empty 20 12 0 14 -261474 -66577
+0;
+#X text 152 27 ADSR module;
+#X text 33 320 1 Speed knob (left-slow \, right-fast) \; 2 Auto-trigger
+toggle (when on \, envelope retriggers once it finishes) \; 3 Level
+vslider (multiplies the output. Careful when using this as an amplitude
+envelope - it goes up to 15! Suggest leaving it at 1 for those purposes.)
+\; 4 Draw in the window to create custom envelopes. \; 5 Click "tr"
+to manually trigger the envelope. \; 6 Click "save" to save the current
+envelope as a text file. \; 7 Click "load" to load a previously-saved
+envelope. \; 8 Current envelope saves with the patch ONLY IF YOU HAVE
+IT SAVED AS A TEXT FILE. \;;
+#X text 106 188 ^ signal \, unipolar (0-1). Useful for amp envelopes.
+, f 10;
+#X text 177 188 ^ signal \, bipolar (-1 to 1). Useful for control envelopes.
+, f 10;
+#X obj 300 105 cnv 15 100 60 empty empty ECL 30 16 0 20 -261691 -191155
+0;
+#X text 316 133 madam data;
+#X text 333 146 2017;

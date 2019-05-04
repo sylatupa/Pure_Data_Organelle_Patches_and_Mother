@@ -1,0 +1,149 @@
+#N canvas 134 145 1731 786 10;
+#X obj 503 194 pack 0 0;
+#X obj 503 94 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 503 159 makenote 80 1000;
+#X obj 503 375 *~ 0.25;
+#N canvas 7 371 582 570 REFERENCE 0;
+#X text 24 31 Name: [u_makepoly];
+#X text 24 434 Tags: Audio;
+#X text 24 344 Description: creates a polyphonic version of midi-controlled
+instruments. The creation arguments set the max number of polphony
+and can switch voice stealing on.;
+#X text 24 266 Outlet 0: Main audio signal output. If the instrument
+is stereo this outlet becomes the left channel.;
+#X text 24 301 Outlet 1: Right audio signal output. This is unused
+if a mono instrument is being used.;
+#X text 24 81 Argument 0: <integer> - Max Polyphony.;
+#X text 24 51 Summary: make midi-like instruments polyphonic.;
+#X text 24 121 Argument 2: <symbol> - Instrument name.;
+#X text 24 101 Argument 1: <bool> - Voice stealing (0/1).;
+#X text 24 141 Argument 3: <symbol> - Unique Name.;
+#X text 24 204 Inlet 0: <float float> - Midi note number and velocity.
+;
+#X text 24 224 Inlet 1: <various> - Control inlet \, messages depend
+on the instrument used.;
+#X text 24 397 See also: [u_makepoly] [u_robinpoly] [u_robinpolymono]
+;
+#X text 24 161 Argument 4..7: <various> - Up to four more arguments
+can be passed through to the object in use.;
+#X coords 0 -1 1 1 450 450 1 10 10;
+#X restore 19 325 pd REFERENCE;
+#X obj 15 28 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
+0;
+#X text 478 61 Example:;
+#X obj 18 30 u_makepoly;
+#X text 139 31 - make midi-like instruments polyphonic;
+#N canvas 0 50 236 241 PLAY 0;
+#X msg 54 119 40 \, 44 \, 56 \, 60;
+#X msg 87 141 40 \, 46 \, 58 \, 62;
+#X obj 54 69 random 2;
+#X obj 54 96 select 0 1;
+#X obj 54 47 metro 500;
+#X obj 54 23 inlet;
+#X obj 54 177 outlet;
+#X connect 0 0 6 0;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 3 1 1 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 0;
+#X restore 503 123 pd PLAY;
+#X obj 503 410 dac~;
+#X obj 503 286 u_makepoly 16 1 s_rhodey \$0-MYINST;
+#X obj 1104 109 seq8 0 1 0 0 1 0 0 1 0;
+#X obj 1104 64 tgl 15 0 empty empty click_here 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 1104 138 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1151 139 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 1199 140 5 0 0 0 - - -, f 5;
+#X floatatom 1247 140 5 0 0 0 - - -, f 5;
+#X obj 1099 28 cnv 15 165 30 empty empty empty 20 12 0 14 -261474 -66577
+0;
+#X text 1105 34 8-step sequencer module;
+#X obj 1282 29 cnv 15 100 60 empty empty ECL 30 16 0 20 -261691 -191155
+0;
+#X text 1298 57 madam data;
+#X text 1315 70 2017;
+#X obj 1268 166 cnv 15 200 100 empty empty empty 20 12 0 14 -231988
+-66577 0;
+#X obj 1030 166 cnv 15 230 150 empty empty empty 20 12 0 14 -195321
+-66577 0;
+#X text 1036 171 Inlets;
+#X text 1276 172 Outlets;
+#X text 1275 190 1 "On" bangs \; 2 "Off" bangs \; 3 0s and 1s according
+to the sequence \; 4 Step count (0-7) \;, f 29;
+#X text 1036 191 1 Bang - triggers the next step \; (2-9) a 0 or 1
+sets the value of steps 1 to 8 \; 10 Sending a number 0-7 to this inlet
+causes the sequencer to jump to that step the next time it receives
+a trigger \;, f 35;
+#X msg 1222 77 0;
+#X msg 1037 84 \; pd dsp 1;
+#X obj 1104 85 metro 150;
+#X msg 1254 78 4;
+#X obj 1030 355 hsl 128 15 0 1 0 0 empty empty tone_(0...1) 20 7 1
+10 -262144 -1 -1 7300 1;
+#X obj 656 241 r \$0-in1;
+#X obj 1027 400 s \$0-in1;
+#X msg 1027 376 tone \$1;
+#X obj 1027 485 s \$0-in1;
+#X floatatom 1027 440 5 0 0 0 - - -, f 5;
+#X obj 1139 484 s \$0-in1;
+#X floatatom 1139 439 5 0 0 0 - - -, f 5;
+#X obj 1028 583 s \$0-in1;
+#X floatatom 1028 538 5 0 0 0 - - -, f 5;
+#X msg 1028 560 mod \$1;
+#X msg 1027 461 vib-freq \$1;
+#X msg 1139 461 vib-depth \$1;
+#X obj 1142 581 s \$0-in1;
+#X floatatom 1142 536 5 0 127 0 - - -, f 5;
+#X msg 1142 558 adsr24 \$1;
+#X obj 1196 400 s \$0-in1;
+#X floatatom 1196 355 5 0 0 0 - - -, f 5;
+#X msg 1196 377 decay \$1;
+#X text 26 75 Rhodes piano realised with a 4-operator FM synth;
+#X text 32 131 Inlet 0: midi note/velocity pairs;
+#X text 94 172 tone: float from 0...1 \, default is 0.5);
+#X text 94 213 vib-freq: vibrato frequency (try 11);
+#X text 95 233 vib-depth: vibrato depth (try 1);
+#X text 32 152 Inlet 1 accepts various methods:;
+#X text 31 100 Args: <Name>;
+#X text 95 278 adsr24: depth of the modulating operator's (2 and 4)
+envelopes (0-127 \, default 127) (this is an exotic parameter...);
+#X text 95 257 mod: modulation index for first operator pair (default
+1);
+#X text 94 190 decay: decay of note in msec (default: 1500);
+#X connect 0 0 11 0;
+#X connect 1 0 9 0;
+#X connect 2 0 0 0;
+#X connect 2 1 0 1;
+#X connect 3 0 10 0;
+#X connect 3 0 10 1;
+#X connect 9 0 2 0;
+#X connect 11 0 3 0;
+#X connect 12 0 14 0;
+#X connect 12 0 9 0;
+#X connect 12 1 15 0;
+#X connect 12 2 16 0;
+#X connect 12 3 17 0;
+#X connect 13 0 30 0;
+#X connect 13 0 31 0;
+#X connect 29 0 12 9;
+#X connect 31 0 12 0;
+#X connect 32 0 12 9;
+#X connect 33 0 36 0;
+#X connect 34 0 11 1;
+#X connect 36 0 35 0;
+#X connect 38 0 44 0;
+#X connect 40 0 45 0;
+#X connect 42 0 43 0;
+#X connect 43 0 41 0;
+#X connect 44 0 37 0;
+#X connect 45 0 39 0;
+#X connect 47 0 48 0;
+#X connect 48 0 46 0;
+#X connect 50 0 51 0;
+#X connect 51 0 49 0;

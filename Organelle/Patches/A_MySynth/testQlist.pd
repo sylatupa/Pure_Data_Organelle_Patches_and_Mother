@@ -1,0 +1,23 @@
+#N canvas -8 -8 1280 677 10;
+#X obj 1087 352 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1012 354 qlist;
+#X obj 1087 373 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 946 298 r tempo;
+#X msg 945 329 tempo \$1;
+#X obj 962 207 loadbang;
+#X msg 980 238 read ./sequence.txt;
+#X obj 960 175 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 944 275 2;
+#X connect 0 0 1 0;
+#X connect 1 1 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 5 0 8 0;
+#X connect 6 0 1 0;
+#X connect 7 0 5 0;
+#X connect 8 0 4 0;
