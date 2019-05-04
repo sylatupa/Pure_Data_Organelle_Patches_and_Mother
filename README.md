@@ -1,7 +1,7 @@
-# Critter and Guitari Organelle on a Raspberry Pi, with OSC
-## A Pure Data client that sonifys MQTT and OSC data
+# Critter and Guitari Organelle on a Raspberry Pi, with extras
+## A Pure Data client that sonifys MQTT, UDP, or OSC data
 
-Most of what this project is about is making a more advanced main patch--the Desktop Mother, Pure Data Patch.
+Most of what this project is about is making a more advanced main patch--the Organelle Desktop Mother, a Pure Data Patch.
 I needed to look better for when I use it on my desktop, and provide some information about the audio signals going in and out.
 
 Ideally, Pure data and the Patches run on a headless Raspberry pi, automatically. Plug in the Pi and audio out and it automatically starts to run. There are some things left undone about this; it works fine if you hard code which patches you want to automatically run, but its very difficult to change the patch when running on a headless Raspberry Pi. Work has been done on this front, but its not done.
@@ -11,10 +11,11 @@ Ideally, Pure data and the Patches run on a headless Raspberry pi, automatically
 
 Most patches and desktop mother patches are from https://www.critterandguitari.com/organelle.
 
-- [ ] Develop the ability to produce chords, like Kordbot: https://www.soundonsound.com/reviews/isla-instruments-kordbot.
-- [x] Allow for data to be sent over UDP and send it to Organelle knob1-4, notes, and vol. https://github.com/sylatupa/Digital_Culture_Server
+- [ ] #1 and #7 Develop the ability to produce and display chords, like Kordbot: https://www.soundonsound.com/reviews/isla-instruments-kordbot.
+- [x] #3 and #4 Allow for data to be sent over UDP and send it to Organelle knob1-4, notes, and vol. https://github.com/sylatupa/Digital_Culture_Server
+- [x] #6 quick plot of the data coming from UDP
 - [x] Automatically start Pure Data and the mother patch on Raspberry Pi Boot
-- [x] Ability to open a new Pure Data patch, inside of Pure Data 
+- [x] #2 and #5 Ability to open a new Pure Data patch, inside of Pure Data (needs more work)
 
 
 ## parallel_projects
