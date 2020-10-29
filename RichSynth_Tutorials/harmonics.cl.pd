@@ -1,0 +1,16 @@
+#N canvas 474 24 447 484 10;
+#X obj 35 25 inlet;
+#X obj 32 211 outlet~;
+#X obj 42 173 /~ 8;
+#X obj 54 143 osc~ 440;
+#X obj 80 77 loadbang;
+#X obj 80 114 * 55;
+#X obj 80 96 random 12;
+#X text 31 255 cmd - s (mac) to save or ctrl-s (win);
+#X text 120 120 random harmonics of a low A;
+#X connect 0 0 6 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X connect 6 0 5 0;
