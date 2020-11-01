@@ -1,4 +1,4 @@
-#N canvas 67 87 1533 813 16;
+#N canvas 0 55 1920 1005 16;
 #X msg 18 748 \; pd dsp 1;
 #X obj 18 694 loadbang;
 #X obj 18 721 delay 100;
@@ -100,7 +100,7 @@ MIDI;
 #X obj 1188 657 s kgsv;
 #X obj 1261 655 s kasv;
 #X obj 929 545 sel 1 2 3 4 5 6 7 8 9 10 11 12;
-#X floatatom 997 514 5 0 0 0 - - -, f 5;
+#X floatatom 997 514 5 0 0 0 - - -;
 #X obj 1016 442 12;
 #X obj 989 478 + 1;
 #X text 881 591 kcv = key c \, visual \; this sets the gui keyboard
@@ -266,7 +266,7 @@ loud. Also sends values to the Organelle's OLED VU meter.;
 #X obj 133 740 metro 400;
 #X obj 3 -2 cnv 15 785 600 empty empty empty 20 12 0 14 -128992 -66577
 0;
-#X obj 47 239 tgl 50 0 kcs kcs empty 17 7 0 10 -33289 -262144 -1 0
+#X obj 47 239 tgl 50 0 kcs kcs empty 17 7 0 10 -33289 -262144 -1 1
 1;
 #X obj 10 19 vsl 40 150 0 1 0 0 knob1 knob1 k1 0 -9 0 22 -66577 -262144
 -4160 13410 0;
@@ -279,11 +279,11 @@ loud. Also sends values to the Organelle's OLED VU meter.;
 #X obj 164 190 tgl 25 0 send-all-vals empty reset 0 0 0 22 -262144
 -1 -4160 0 1;
 #X obj 90 191 tgl 25 0 fs fs foot 0 0 0 22 -66577 -262144 -1 0 1;
-#X obj 101 239 tgl 50 0 kds kds empty 17 7 0 10 -33289 -262144 -1 0
+#X obj 101 239 tgl 50 0 kds kds empty 17 7 0 10 -33289 -262144 -1 1
 1;
 #X obj 201 239 tgl 50 0 kfs kfs empty 17 7 0 10 -33289 -262144 -1 1
 1;
-#X obj 253 239 tgl 50 0 kgs kgs empty 17 7 0 10 -33289 -262144 -1 0
+#X obj 253 239 tgl 50 0 kgs kgs empty 17 7 0 10 -33289 -262144 -1 1
 1;
 #X obj 305 239 tgl 50 0 kas kas empty 17 7 0 10 -33289 -262144 -1 0
 1;
@@ -722,7 +722,7 @@ loud. Also sends values to the Organelle's OLED VU meter.;
 #X obj 62 1667 route 129 130 131 132 133 134 135 136 137 138 139 140
 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157
 158 159 160, f 141;
-#X floatatom 167 1323 5 0 0 0 - - -, f 5;
+#X floatatom 167 1323 5 0 0 0 - - -;
 #X obj -57 1391 print;
 #X obj 114 1321 key;
 #X obj 92 1350 pack 100 1;
@@ -753,14 +753,14 @@ loud. Also sends values to the Organelle's OLED VU meter.;
 #X obj 517 1838 + 0, f 5;
 #X msg 526 1801 -1;
 #X obj 444 1843 float;
-#X floatatom 452 1935 5 0 0 0 - - -, f 5;
-#X floatatom 445 1871 5 0 0 0 - - -, f 5;
+#X floatatom 452 1935 5 0 0 0 - - -;
+#X floatatom 445 1871 5 0 0 0 - - -;
 #X obj 719 1738 key;
 #X msg 720 1798 1;
 #X obj 814 1733 key;
 #X msg 809 1801 -1;
 #X obj 727 1843 float;
-#X floatatom 735 1935 5 0 0 0 - - -, f 5;
+#X floatatom 735 1935 5 0 0 0 - - -;
 #X obj 800 1838 + 0, f 5;
 #X obj 716 1768 sel 93;
 #X obj 816 1759 sel 91;
@@ -1094,7 +1094,7 @@ loud. Also sends values to the Organelle's OLED VU meter.;
 ;
 #X obj 370 69 tgl 50 0 empty kdsv empty 17 7 0 10 -33289 -262144 -1
 0 1;
-#X obj 393 123 tgl 50 0 empty kev empty 17 7 0 10 -262144 -1 -1 0 1
+#X obj 393 123 tgl 50 0 empty kev empty 17 7 0 10 -262144 -1 -1 1 1
 ;
 #X obj 446 123 tgl 50 0 empty kfv empty 17 7 0 10 -262144 -1 -1 0 1
 ;
@@ -1114,62 +1114,18 @@ loud. Also sends values to the Organelle's OLED VU meter.;
 ;
 #N canvas 2 101 450 250 (subpatch) 0;
 #X array adc 400 float 3;
-#A 0 0.274539 0.59247 0.39494 0.203133 0.274777 0.317454 0.241876 0.261426
-0.315666 0.424027 0.270486 0.226259 0.133276 0.196338 0.255704 0.214934
-0.236273 0.216842 0.092864 0.0702143 0.219345 0.0625849 0.10705 0.118613
-0.226974 0.208259 0.227571 0.301242 0.231862 0.22471 0.0801086 0.319362
-0.152707 0.265837 0.0201464 0.12207 0.0748634 0.182509 0.130534 0.133634
-0.152111 0.246644 0.0965595 0.290394 0.254273 0.307322 0.200987 0.110149
-0.267744 0.280261 0.264525 0.278473 0.297666 0.290036 0.203252 0.215769
-0.449777 0.244498 0.167131 0.381947 0.339866 0.3196 0.115633 0.313163
-0.125051 0.36025 0.179648 0.275135 0.169992 0.314116 0.00298023 0.0929832
-0.26381 0.000596046 0.160217 0.103593 0.152946 0.0787973 0.142097 0.22161
-0.0300407 0.225425 0.250101 0.299573 0.20647 0.31817 0.129819 0.131845
-0.244498 0.180483 0.260353 0.114918 0.244617 0.0765324 0.0424385 0.121951
-0.278592 0.0309944 0.249267 -0.150681 0.262856 0.092864 0.15223 0.177264
-0.103831 0.317335 0.158906 0.0246763 0.201941 -0.00703335 -0.0026226
-0.203609 0.0258684 0.0451803 0.0202656 0.211 -0.0989437 0.0529289 0.0793934
-0.07689 0.0588894 0.0584126 0.0352859 -0.160098 0.0505447 -0.0305176
--0.0611544 -0.0647306 -0.0174046 -0.128746 -0.074029 -0.125408 -0.323534
--0.264525 -0.0371933 -0.188351 -0.0109673 -0.0566244 -0.0663996 -0.209093
--0.137687 -0.196457 -0.192404 -0.157356 -0.0452995 -0.29707 -0.146985
--0.345826 -0.172615 -0.3438 -0.198364 -0.123024 -0.167608 -0.105143
--0.258088 -0.0391006 -0.167966 -0.2141 -0.14782 -0.136137 -0.268102
-0.122428 -0.228047 -0.141621 -0.292182 -0.056386 0.0100136 -0.136137
--0.213742 -0.0947714 -0.307679 -0.177026 -0.186324 -0.207901 -0.134945
--0.208855 0.00143051 -0.342846 -0.164866 -0.174761 -0.253439 -0.129342
--0.249624 -0.160694 -0.215054 -0.189662 -0.255346 -0.361919 -0.263572
--0.203133 -0.261188 -0.256658 -0.11301 -0.144124 -0.221848 -0.264287
--0.177145 -0.113368 -0.157237 -0.149488 -0.127554 -0.0656843 -0.0481606
-0.0742674 -0.0544786 0.0537634 0.0236034 -0.0401735 0.172615 -0.0237226
-0.0126362 0.156283 0.0504255 0.119448 -0.0264645 0.277877 0.0400543
-0.0616312 0.0128746 0.0422001 -0.105143 0.0309944 -0.267267 -0.0602007
--0.107884 0.00417233 -0.22161 -0.155807 -0.0741482 -0.166774 -0.147223
-0.0350475 -0.245333 0.0472069 0.0954866 -0.230551 -0.218511 -0.247359
--0.407338 -0.15974 -0.299811 -0.248551 -0.234246 -0.329494 -0.401258
--0.248313 -0.565767 -0.515699 -0.413418 -0.364184 -0.430703 -0.393748
--0.23222 -0.502467 -0.438094 -0.296831 -0.476122 -0.473022 -0.24724
--0.452042 -0.400305 -0.55635 -0.409603 -0.329733 -0.488043 -0.350714
--0.522375 -0.436306 -0.590563 -0.506401 -0.37241 -0.612259 -0.521302
--0.563145 -0.549197 -0.597954 -0.496149 -0.481606 -0.74172 -0.393391
--0.519633 -0.479341 -0.623226 -0.449419 -0.586271 -0.682712 -0.471473
--0.577331 -0.457048 -0.610948 -0.434399 -0.526667 -0.570655 -0.64373
--0.524759 -0.382185 -0.557661 -0.475049 -0.58496 -0.571489 -0.629902
--0.492215 -0.552058 -0.59998 -0.699401 -0.60606 -0.627279 -0.708222
--0.568271 -0.750184 -0.709653 -0.602603 -0.707984 -0.339985 -0.716209
--0.59247 -0.659108 -0.569463 -0.635147 -0.549793 -0.616789 -0.734448
--0.512362 -0.62561 -0.713468 -0.528812 -0.742674 -0.482678 -0.679493
--0.537276 -0.528097 -0.512362 -0.557542 -0.336885 -0.39506 -0.413418
--0.452995 -0.302076 -0.226974 -0.483751 -0.294447 -0.47648 -0.176668
--0.109196 -0.224113 -0.349641 -0.376105 -0.0954866 -0.0882149 -0.0699759
--0.0318289 -0.1297 -0.105977 -0.0189543 0.0526905 0.0293255 0.0628233
-0.117779 0.0594854 0.178218 -0.146627 0.0239611 0.157595 -0.0606775
--0.0849962 -0.13411 -0.275135 -0.112057 -0.0460148 -0.0611544 0.048399
-0.00596046 -0.147104 -0.135541 -0.0995398 0.0452995 -0.204325 -0.0838041
--0.0982285 0.0954866 -0.0743866 0.111938 0.036478 0.179648 0.236154
-0.153303 0.0469685 0.174165 0.0305176 0.0764132 0.0437498 -0.0702143
-0.223637 0.10705 0.135422 0.0984669 -0.128269 -0.0238419 -0.126839
--0.0855923;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 #X coords 0 1 400 -1 150 50 1 0 0;
 #X restore 472 14 graph;
 #X obj 20 188 tgl 25 0 aux aux aux 0 0 0 22 -262144 -1 -4160 0 1;
@@ -1177,23 +1133,23 @@ loud. Also sends values to the Organelle's OLED VU meter.;
 #X obj 124 292 tgl 50 0 ke ke empty 17 7 0 10 -262144 -1 -1 1 1;
 #X obj 176 292 tgl 50 0 kf kf empty 17 7 0 10 -262144 -1 -1 0 1;
 #X obj 228 292 tgl 50 0 kg kg empty 17 7 0 10 -262144 -1 -1 0 1;
-#X obj 280 292 tgl 50 0 ka ka empty 17 7 0 10 -262144 -1 -1 0 1;
-#X obj 332 292 tgl 50 0 kb kb empty 17 7 0 10 -262144 -33289 -1 1 1
+#X obj 280 292 tgl 50 0 ka ka empty 17 7 0 10 -262144 -1 -1 1 1;
+#X obj 332 292 tgl 50 0 kb kb empty 17 7 0 10 -262144 -33289 -1 0 1
 ;
 #X obj 384 292 tgl 50 0 key13 key13 empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 436 292 tgl 50 0 key15 key15 empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 488 292 tgl 50 0 key17 key17 empty 17 7 0 10 -262144 -1 -1 0
+#X obj 488 292 tgl 50 0 key17 key17 empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 540 292 tgl 50 0 key18 key18 empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 592 292 tgl 50 0 key20 key20 empty 17 7 0 10 -262144 -1 -1 0
+#X obj 592 292 tgl 50 0 key20 key20 empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 644 292 tgl 50 0 key22 key22 empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 696 292 tgl 50 0 key24 key24 empty 17 7 0 10 -262144 -33289
--1 0 1;
+-1 1 1;
 #X msg 11 381 ~/GIT_LOCAL_WORKING/A_PURE_DATA/Patches/Pow_Pows_Polybeats
 , f 67;
 #X msg 9 431 0;
@@ -1257,7 +1213,7 @@ ylabel -1 0 1 2 3 4 5 6 7 8 9 10 \; array99 0 1 4 2 8 5 6 1 4 2 8;
 #X msg -5 512 \; Scales 0 \$1 \$2 \$3 \$4 \$5 \$6 \$7 \$8 \$9 \$10
 \$11 \$12 \$13 \$14 \$15 \$16, f 22;
 #X obj 165 -43 array get Scales;
-#X floatatom 166 -73 5 0 0 0 - - -, f 5;
+#X floatatom 166 -73 5 0 0 0 - - -;
 #X obj 159 -101 int;
 #X obj 38 15 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
@@ -1265,32 +1221,32 @@ ylabel -1 0 1 2 3 4 5 6 7 8 9 10 \; array99 0 1 4 2 8 5 6 1 4 2 8;
 #X obj -25 -96 float;
 #X obj 47 -103 + 1;
 #X obj -25 -64 mod 16;
-#X floatatom -24 -32 5 0 0 0 - - -, f 5;
+#X floatatom -24 -32 5 0 0 0 - - -;
 #X obj 160 -135 r arp_seq_count;
 #X obj 235 -9 int;
-#X floatatom 163 15 5 0 0 0 - - -, f 5;
-#X floatatom 235 20 5 0 0 0 - - -, f 5;
+#X floatatom 163 15 5 0 0 0 - - -;
+#X floatatom 235 20 5 0 0 0 - - -;
 #X msg 370 487 set \$1 \$2 \$3 \$4 \$5 \$6 \$7 \$8 \$9 \$10 \$11 \$12
 \$13 \$14 \$15 \$16;
 #X obj 365 445 pack \$1 \$2 \$3 \$4 \$5 \$6 \$7 \$8 \$9 \$10 \$11 \$12
 \$13 \$14 \$15 \$16;
-#X msg 369 524 61 65 68 0 0 0 0 0 0 0 0 0 0 0 0 0;
-#X floatatom 430 313 3 0 0 0 - - -, f 3;
-#X floatatom 461 313 3 0 0 0 - - -, f 3;
-#X floatatom 498 313 3 0 0 0 - - -, f 3;
-#X floatatom 540 313 3 0 0 0 - - -, f 3;
-#X floatatom 577 313 3 0 0 0 - - -, f 3;
-#X floatatom 618 313 3 0 0 0 - - -, f 3;
-#X floatatom 654 313 3 0 0 0 - - -, f 3;
-#X floatatom 694 313 3 0 0 0 - - -, f 3;
-#X floatatom 753 313 3 0 0 0 - - -, f 3;
-#X floatatom 806 313 3 0 0 0 - - -, f 3;
-#X floatatom 861 313 3 0 0 0 - - -, f 3;
-#X floatatom 917 313 3 0 0 0 - - -, f 3;
-#X floatatom 966 313 3 0 0 0 - - -, f 3;
-#X floatatom 1019 313 3 0 0 0 - - -, f 3;
-#X floatatom 1069 313 3 0 0 0 - - -, f 3;
-#X floatatom 392 313 3 0 0 0 - - -, f 3;
+#X msg 369 524 61 65 83 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X floatatom 430 313 3 0 0 0 - - -;
+#X floatatom 461 313 3 0 0 0 - - -;
+#X floatatom 498 313 3 0 0 0 - - -;
+#X floatatom 540 313 3 0 0 0 - - -;
+#X floatatom 577 313 3 0 0 0 - - -;
+#X floatatom 618 313 3 0 0 0 - - -;
+#X floatatom 654 313 3 0 0 0 - - -;
+#X floatatom 694 313 3 0 0 0 - - -;
+#X floatatom 753 313 3 0 0 0 - - -;
+#X floatatom 806 313 3 0 0 0 - - -;
+#X floatatom 861 313 3 0 0 0 - - -;
+#X floatatom 917 313 3 0 0 0 - - -;
+#X floatatom 966 313 3 0 0 0 - - -;
+#X floatatom 1019 313 3 0 0 0 - - -;
+#X floatatom 1069 313 3 0 0 0 - - -;
+#X floatatom 392 313 3 0 0 0 - - -;
 #X obj 1035 409 r s16;
 #X obj 982 409 r s15;
 #X obj 932 409 r s14;
@@ -1338,21 +1294,21 @@ root is major;
 #X obj 184 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 208 131 unpack \$1 \$2;
-#X floatatom 189 164 5 0 0 0 - - -, f 5;
+#X floatatom 189 164 5 0 0 0 - - -;
 #X obj 188 243 + 1;
 #X obj 189 200 + 3;
 #X obj 253 202 + 6;
 #X obj 127 242 + 1;
 #X obj 59 241 + 1;
-#X floatatom 58 283 5 0 0 0 - - -, f 5;
-#X floatatom 0 284 5 0 0 0 - - -, f 5;
-#X floatatom 124 283 5 0 0 0 - - -, f 5;
-#X floatatom 196 282 5 0 0 0 - - -, f 5;
-#X floatatom 257 285 5 0 0 0 - - -, f 5;
+#X floatatom 58 283 5 0 0 0 - - -;
+#X floatatom 0 284 5 0 0 0 - - -;
+#X floatatom 124 283 5 0 0 0 - - -;
+#X floatatom 196 282 5 0 0 0 - - -;
+#X floatatom 257 285 5 0 0 0 - - -;
 #X obj 122 202 + 5;
 #X obj 60 200 + 3;
 #X obj 305 244 + 1;
-#X floatatom 313 283 5 0 0 0 - - -, f 5;
+#X floatatom 313 283 5 0 0 0 - - -;
 #X obj 305 203 + 11;
 #X connect 0 0 2 0;
 #X connect 2 0 3 0;
@@ -1460,25 +1416,21 @@ root is major;
 #X connect 123 0 121 0;
 #X coords 0 0 1 1 85 60 0;
 #X restore 488 606 pd music_scales;
-#X msg 556 748 ~/GIT_LOCAL_WORKING/A_PURE_DATA/Patches;
-#X obj 960 748 r index;
-#N canvas 67 87 1533 813 move_through_files 0;
+#X obj 960 753 r index;
+#N canvas 194 151 1533 813 move_through_files 1;
 #X msg 88 652 \; pd-main.pd menuclose \;;
-#X msg 84 114 ls ~/GIT_LOCAL_WORKING/A_PURE_DATA/Patches | xargs;
 #X obj 67 143 ggee/shell;
 #X obj 67 77 r keyapost;
 #X obj 841 227 list split 9;
-#X floatatom 953 136 5 0 0 0 - - -, f 5;
+#X floatatom 953 136 5 0 0 0 - - -;
 #X obj 953 167 * 127;
 #X obj 67 176 list prepend;
 #X msg 85 704 \; pd open main.pd /home/spy/GIT_LOCAL_WORKING/A_PURE_DATA/Patches/AmbientFX
 , f 75;
 #X msg 85 777 \; pd-main.pd menuclose \;;
 #X obj 848 268 list split 1;
-#X msg 858 315 symbol /home/spy/GIT_LOCAL_WORKING/A_PURE_DATA/Patches/\$1
-, f 74;
 #X msg 49 432 set \; pd open \$1 \$2;
-#X msg 862 391 /home/spy/GIT_LOCAL_WORKING/A_PURE_DATA/Patches/Sampler
+#X msg 862 391 ~/Pure_Data_Organelle_Patches_and_Mother/Organelle/Patches/anAudioLearningThing
 , f 24;
 #X obj 48 295 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -1496,49 +1448,52 @@ root is major;
 #X obj 955 11 inlet;
 #X obj 295 19 inlet;
 #X msg 296 65 set ls \$1 | xargs;
-#X floatatom 982 205 5 0 0 0 - - -, f 5;
+#X floatatom 982 205 5 0 0 0 - - -;
 #X obj 954 102 r index;
-#X connect 1 0 2 0;
-#X connect 2 0 7 0;
-#X connect 3 0 1 0;
-#X connect 4 1 10 0;
-#X connect 5 0 6 0;
-#X connect 6 0 1 0;
-#X connect 6 0 4 1;
-#X connect 6 0 28 0;
-#X connect 7 0 4 0;
-#X connect 10 0 11 0;
-#X connect 11 0 18 0;
-#X connect 11 0 17 1;
-#X connect 14 0 17 0;
-#X connect 16 0 17 0;
-#X connect 17 0 12 0;
-#X connect 17 0 20 0;
+#X msg 84 114 ls ~/ | xargs;
+#X msg 858 315 symbol ~/Pure_Data_Organelle_Patches_and_Mother/Organelle/Patches/\$1
+, f 74;
+#X connect 1 0 6 0;
+#X connect 2 0 28 0;
+#X connect 3 1 9 0;
+#X connect 4 0 5 0;
+#X connect 5 0 28 0;
+#X connect 5 0 3 1;
+#X connect 5 0 26 0;
+#X connect 6 0 3 0;
+#X connect 9 0 29 0;
+#X connect 12 0 15 0;
+#X connect 14 0 15 0;
+#X connect 15 0 10 0;
+#X connect 15 0 18 0;
+#X connect 16 0 11 0;
+#X connect 16 0 19 0;
+#X connect 16 0 22 0;
 #X connect 18 0 13 0;
+#X connect 18 0 17 0;
 #X connect 18 0 21 0;
-#X connect 18 0 24 0;
-#X connect 20 0 15 0;
-#X connect 20 0 19 0;
-#X connect 20 0 23 0;
-#X connect 22 0 14 0;
-#X connect 25 0 5 0;
-#X connect 26 0 27 0;
-#X connect 29 0 5 0;
-#X restore 560 787 pd move_through_files;
-#X msg 10 483 ~/GIT_LOCAL_WORKING/PROD_SAMPLES/image2_w_color_jpg.wav
+#X connect 20 0 12 0;
+#X connect 23 0 4 0;
+#X connect 24 0 25 0;
+#X connect 27 0 4 0;
+#X connect 28 0 1 0;
+#X connect 29 0 16 0;
+#X connect 29 0 15 1;
+#X restore 560 792 pd move_through_files;
+#X msg 10 483 ~/GIT_LOCAL_WORKING/PROD_SAMPLES/image1_w_color_jpg.wav
 , f 68;
 #X msg 8 547 ~/GIT_LOCAL_WORKING/PROD_SAMPLES/image1_w_color_jpg.wav
 , f 68;
 #X obj 555 511 bng 33 250 50 0 PickSample empty PickSample 17 7 0 10
 -257985 -159808 -1;
-#X floatatom 360 514 5 0 0 0 - - -, f 5;
-#X floatatom 303 515 5 0 0 0 - - -, f 5;
+#X floatatom 360 514 5 0 0 0 - - -;
+#X floatatom 303 515 5 0 0 0 - - -;
 #X obj 161 516 r SampleIndex;
 #X obj 417 514 r SampleCount;
 #X obj 552 348 bng 33 250 50 0 PickSample empty PickSample 17 7 0 10
 -257985 -159808 -1;
-#X floatatom 357 351 5 0 0 0 - - -, f 5;
-#X floatatom 300 352 5 0 0 0 - - -, f 5;
+#X floatatom 357 351 5 0 0 0 - - -;
+#X floatatom 300 352 5 0 0 0 - - -;
 #X obj 158 353 r PatchIndex;
 #X obj 414 351 r PatchCount;
 #X obj 12 354 r BrowsePatch;
@@ -1557,7 +1512,7 @@ root is major;
 #X obj 1096 8 r knob2;
 #X obj 1193 10 r knob3;
 #X obj 1290 10 r knob4;
-#X msg 681 608 \; knob1 0.9 \; knob2 0.5 \; knob3 0.5 \; knob4 0.5
+#X msg 681 613 \; knob1 0.9 \; knob2 0.5 \; knob3 0.5 \; knob4 0.5
 \; vol 0.8 \;;
 #X obj 314 644 FileInterface;
 #X obj 8 517 r browseSample;
@@ -1582,7 +1537,7 @@ root is major;
 #X msg 88 652 \; pd-main.pd menuclose \;;
 #X obj 310 164 ggee/shell;
 #X obj 763 152 list split 9;
-#X floatatom 1022 61 5 0 0 0 - - -, f 5;
+#X floatatom 1022 61 5 0 0 0 - - -;
 #X obj 310 208 list prepend;
 #X msg 85 704 \; pd open main.pd /home/spy/GIT_LOCAL_WORKING/A_PURE_DATA/Patches/AmbientFX
 , f 75;
@@ -1601,14 +1556,14 @@ root is major;
 #X obj 289 16 pack symbol;
 #X msg 289 48 set ls \$1 | xargs;
 #X obj 1181 265 list length;
-#X floatatom 1185 293 5 0 0 0 - - -, f 5;
+#X floatatom 1185 293 5 0 0 0 - - -;
 #X obj 1180 329 outlet;
 #X msg 538 378 ~/GIT_LOCAL_WORKING/PROD_SAMPLES/image1_w_color_jpg.wav
 , f 74;
 #X obj 181 386 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 776 346 set \$2/\$1;
-#X msg 171 497 ~/GIT_LOCAL_WORKING/PROD_SAMPLES/image2_w_color_jpg.wav
+#X msg 171 497 ~/GIT_LOCAL_WORKING/PROD_SAMPLES/image1_w_color_jpg.wav
 , f 78;
 #X obj 185 429 pack s;
 #X msg 180 464 set \$1;
@@ -1644,7 +1599,7 @@ root is major;
 #X msg 88 652 \; pd-main.pd menuclose \;;
 #X obj 310 164 ggee/shell;
 #X obj 763 152 list split 9;
-#X floatatom 1022 61 5 0 0 0 - - -, f 5;
+#X floatatom 1022 61 5 0 0 0 - - -;
 #X obj 310 208 list prepend;
 #X msg 85 704 \; pd open main.pd /home/spy/GIT_LOCAL_WORKING/A_PURE_DATA/Patches/AmbientFX
 , f 75;
@@ -1674,7 +1629,7 @@ root is major;
 #X msg 778 385 ~/GIT_LOCAL_WORKING/A_PURE_DATA/Patches/Pow_Pows_Polybeats
 , f 74;
 #X obj 1181 265 list length;
-#X floatatom 1185 293 5 0 0 0 - - -, f 5;
+#X floatatom 1185 293 5 0 0 0 - - -;
 #X obj 1180 329 outlet;
 #X connect 1 0 4 0;
 #X connect 2 1 22 0;
@@ -1792,11 +1747,15 @@ install pd-mrpeach, f 108;
 #X obj 1224 305 t b i b i;
 #X obj 1251 356 delay 100;
 #X obj 1226 206 r x;
-#X floatatom 1268 243 5 0 0 0 - - -, f 5;
+#X floatatom 1268 243 5 0 0 0 - - -;
 #X obj 1193 240 * 255;
-#X text 787 168;
+#X text 787 168 comment;
 #X text 820 343 mapping to controls;
 #X text 1161 178 mapping to notes;
+#X msg 440 732 ~/Pure_Data_Organelle_Patches_and_Mother/Organelle/Patches
+;
+#X obj 191 428 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X connect 5 0 14 0;
@@ -1807,39 +1766,39 @@ install pd-mrpeach, f 108;
 #X connect 10 0 9 0;
 #X connect 13 0 11 0;
 #X connect 14 0 12 0;
-#X connect 74 0 76 0;
-#X connect 75 0 76 1;
-#X connect 82 0 81 0;
-#X connect 83 0 80 0;
-#X connect 87 0 86 0;
-#X connect 88 0 85 0;
-#X connect 89 0 66 0;
-#X connect 90 0 67 0;
-#X connect 91 0 77 0;
-#X connect 92 0 105 0;
-#X connect 93 0 94 0;
-#X connect 95 0 93 0;
-#X connect 96 0 97 0;
-#X connect 98 0 99 0;
-#X connect 100 0 101 0;
-#X connect 102 0 96 0;
-#X connect 103 0 98 0;
-#X connect 104 0 100 0;
-#X connect 107 0 78 0;
-#X connect 117 0 116 0;
-#X connect 119 0 115 0;
-#X connect 120 0 114 0;
-#X connect 121 0 122 0;
-#X connect 123 0 105 0;
-#X connect 126 0 130 0;
+#X connect 74 0 75 1;
+#X connect 81 0 80 0;
+#X connect 82 0 79 0;
+#X connect 86 0 85 0;
+#X connect 87 0 84 0;
+#X connect 88 0 66 0;
+#X connect 89 0 67 0;
+#X connect 90 0 76 0;
+#X connect 91 0 104 0;
+#X connect 92 0 93 0;
+#X connect 94 0 92 0;
+#X connect 95 0 96 0;
+#X connect 97 0 98 0;
+#X connect 99 0 100 0;
+#X connect 101 0 95 0;
+#X connect 102 0 97 0;
+#X connect 103 0 99 0;
+#X connect 106 0 77 0;
+#X connect 116 0 115 0;
+#X connect 118 0 114 0;
+#X connect 119 0 113 0;
+#X connect 120 0 121 0;
+#X connect 122 0 104 0;
+#X connect 125 0 129 0;
+#X connect 126 0 123 0;
 #X connect 127 0 124 0;
-#X connect 128 0 125 0;
-#X connect 128 0 124 0;
-#X connect 129 0 128 0;
-#X connect 130 0 131 0;
-#X connect 130 1 129 0;
-#X connect 130 3 127 0;
-#X connect 131 0 128 0;
-#X connect 132 0 133 0;
-#X connect 132 0 134 0;
-#X connect 134 0 126 0;
+#X connect 127 0 123 0;
+#X connect 128 0 127 0;
+#X connect 129 0 130 0;
+#X connect 129 1 128 0;
+#X connect 129 3 126 0;
+#X connect 130 0 127 0;
+#X connect 131 0 132 0;
+#X connect 131 0 133 0;
+#X connect 133 0 125 0;
+#X connect 137 0 75 0;

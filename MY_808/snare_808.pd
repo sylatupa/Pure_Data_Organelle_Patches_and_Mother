@@ -1,7 +1,20 @@
-#N canvas 577 307 921 569 10;
-#X obj 215 439 *~ 0.25;
-#X obj 215 460 dac~;
-#X obj 229 290 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#N canvas 480 55 960 1005 10;
+#X obj 597 95 inlet;
+#X obj 677 113 inlet;
+#X obj 744 116 inlet;
+#X obj 740 154 * 40;
+#X obj 821 116 inlet;
+#X obj 817 158 * 50;
+#X obj 595 153 * 2000;
+#X obj 591 621 outlet~;
+#X obj 54 6 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 353 316 r snare;
+#X obj 353 342 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 521 596 *~ 0.25;
+#X obj 521 617 dac~;
+#X obj 535 447 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #N canvas 0 23 746 614 tr808-snare 0;
 #X obj 247 36 inlet;
@@ -92,31 +105,41 @@
 #X connect 20 0 1 0;
 #X connect 20 0 8 0;
 #X connect 21 0 3 1;
-#X restore 229 310 pd tr808-snare;
-#X floatatom 264 282 5 0 0 1 Decay - -;
-#X obj 266 132 vsl 15 128 50 2000 0 0 empty tr808sn_decay empty 0 -9
-0 10 -262144 -1 -1 2931 1;
-#X floatatom 344 287 5 0 0 1 Noise - -;
-#X obj 345 141 vsl 15 128 100 10000 1 0 empty tr808sn_noise empty 0
+#X restore 535 467 pd tr808-snare;
+#X floatatom 570 439 5 0 0 1 Decay - -;
+#X obj 572 289 vsl 15 128 50 2000 0 0 empty tr808sn_decay empty 0 -9
+0 10 -262144 -1 -1 12700 1;
+#X floatatom 650 444 5 0 0 1 Noise - -;
+#X obj 651 298 vsl 15 128 100 10000 1 0 empty tr808sn_noise empty 0
 -9 0 10 -262144 -1 -1 10788 1;
-#X obj 54 67 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
-;
-#X floatatom 106 55 5 0 0 0 - - -;
-#X msg 356 368 \; tr808sn_decay 200 \; tr808sn_noise 300 \;;
-#X msg 508 365 \; tr808sn_decay 500 \; tr808sn_noise 5000 \;;
-#X msg 512 422 \; tr808sn_decay 800 \; tr808sn_noise 3000 \;;
-#X msg 352 419 \; tr808sn_decay 300 \; tr808sn_noise 6000 \;;
-#X obj 509 345 loadbang;
-#X obj 56 88 metro 500;
-#X connect 0 0 1 0;
-#X connect 0 0 1 1;
+#X obj 360 224 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 412 212 5 0 0 0 - - -;
+#X msg 1170 579 \; tr808sn_decay 200 \; tr808sn_noise 300 \;;
+#X msg 1322 576 \; tr808sn_decay 500 \; tr808sn_noise 5000 \;;
+#X msg 1326 633 \; tr808sn_decay 800 \; tr808sn_noise 3000 \;;
+#X msg 1166 630 \; tr808sn_decay 300 \; tr808sn_noise 6000 \;;
+#X obj 1323 556 loadbang;
+#X obj 362 245 metro 500;
+#X obj 673 151 * 5000;
+#X connect 0 0 6 0;
+#X connect 1 0 27 0;
 #X connect 2 0 3 0;
-#X connect 3 0 0 0;
-#X connect 4 0 3 1;
-#X connect 5 0 4 0;
-#X connect 6 0 3 2;
-#X connect 7 0 6 0;
-#X connect 8 0 15 0;
-#X connect 9 0 15 1;
+#X connect 4 0 5 0;
+#X connect 6 0 16 0;
+#X connect 9 0 10 0;
+#X connect 9 0 13 0;
+#X connect 10 0 13 0;
+#X connect 11 0 12 0;
+#X connect 11 0 12 1;
+#X connect 13 0 14 0;
 #X connect 14 0 11 0;
-#X connect 15 0 2 0;
+#X connect 15 0 14 1;
+#X connect 16 0 15 0;
+#X connect 17 0 14 2;
+#X connect 18 0 17 0;
+#X connect 19 0 26 0;
+#X connect 20 0 26 1;
+#X connect 25 0 22 0;
+#X connect 26 0 13 0;
+#X connect 27 0 18 0;
