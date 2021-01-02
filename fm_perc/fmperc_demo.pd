@@ -1,0 +1,72 @@
+#N canvas 0 25 1280 736 10;
+#X obj 338 239 fmperc;
+#X obj 340 6 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 376 113 prnd;
+#X msg 369 88 r1;
+#X msg 361 64 a 1 \, r 200 \, hpf 8000;
+#X msg 348 31 pld 2 \, hpf 4000 \, r 300 \, bang;
+#X obj 339 710 dac~;
+#X obj 402 576 hsl 128 15 0 1 0 0 empty vol Volume 3 -8 0 10 -262144
+-1 -1 12700 1;
+#X obj 339 596 *~;
+#X text 367 5 Make noise!;
+#X text 532 24 Load preset#2 \, change highpass cutoff to 4000Hz \,
+Change release time to 300ms \, make tamboourine noise...;
+#X text 495 64 Reset envelope and filter to default without making
+any noise, f 63;
+#X text 400 87 randomize cc#1 \, that is f1 \, that is the frequency
+of osc1;
+#X text 419 113 randomize all osc controls;
+#X msg 383 137 pst 127;
+#X text 442 137 save current state to preset#127;
+#X text 370 217 Open the abstraction for further explanation;
+#X text 542 575 Pump up the volume!;
+#X obj 339 618 drive1~;
+#X obj 339 644 xfade~;
+#X obj 402 623 hsl 128 15 0 1 0 0 empty beef BeefCake 3 -8 0 10 -262144
+-1 -1 6600 1;
+#X text 542 622 Beef it up!;
+#X text 374 669 <- Add some ping pong delay and some verb. I'm too
+lazy to do it myself;
+#X text 10 101 Each osc is a wrapped ramp (triangle) with control inlets
+for shape (using pow~) and pulsewidth modulation. So you can do anything
+from /|/| to @#$%... well almost.., f 50;
+#X text 11 167 Since FM synthesis is a rather dense field with a predictability
+proportional to our understanding of complex math \, randomizers are
+included as well as the possibilty to store and recall 128 presets
+, f 50;
+#X text 10 8 This is a little gem called fmperc that can provide you
+with a shitload of weird percussive sounds. Its a two osc feedback
+fm system \, with shapable oscillators. Or to put it in blunt FM lingo:
+Both oscs are each others modulators and carriers., f 50;
+#X msg 389 167 pld 22 \, 0 \, 1 10 \, 0.3 100 10 \, 0 500 110;
+#X text 634 161 load preset#22 and play it with a custom envelope (the
+messages after first ' \, ' go straight to vline~;
+#X text 12 232 If you open the fmperc abstraction you'll get plenty
+info on controls and more., f 50;
+#X text 12 269 This demo patch relies on the abstractions : drive1~.pd
+\, xfade~.pd and of course fmperc.pd, f 50;
+#X text 12 305 fmperc.pd itself needs oscxxpd \, ar~.pd and rndF to
+fu nction, f 49;
+#X text 14 343 All absgractions should be included in the .zip file
+you downloaded. If not so \, make a noise here: httpps://forum.pdpatchrepo.info
+, f 50;
+#X obj 255 552 loadbang;
+#X msg 255 574 \; vol 0.6 \; beef 0 \;;
+#X connect 0 0 8 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 7 0 8 1;
+#X connect 8 0 18 0;
+#X connect 8 0 19 1;
+#X connect 14 0 0 0;
+#X connect 18 0 19 0;
+#X connect 19 0 6 0;
+#X connect 19 0 6 1;
+#X connect 20 0 19 2;
+#X connect 26 0 0 0;
+#X connect 32 0 33 0;

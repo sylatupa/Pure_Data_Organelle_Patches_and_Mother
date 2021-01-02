@@ -1,5 +1,5 @@
 #N canvas 0 55 1920 1005 10;
-#N canvas 1265 53 634 693 kick_synth 0;
+#N canvas 643 211 635 693 kick_synth 0;
 #X floatatom 267 137 5 0 0 0 - - -;
 #X text 270 197 fDec = 250;
 #X floatatom 292 356 5 0 0 0 - - -;
@@ -84,68 +84,68 @@
 #X connect 29 0 4 0;
 #X connect 29 0 10 0;
 #X connect 29 0 15 0;
-#X restore 41 346 pd kick_synth;
+#X restore 41 366 pd kick_synth;
 #X f 64;
-#X obj 38 97 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 35 217 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X floatatom 114 306 5 0 0 1 decay - -;
-#X obj 115 157 vsl 15 128 50 2000 1 0 empty kick_decay empty 0 -9 0
-10 -262144 -1 -1 5541 1;
-#X floatatom 193 310 5 0 0 1 pitch_scale - -;
-#X obj 193 166 vsl 15 128 0.1 3 0 0 empty kick_pitch empty 0 -9 0 10
--262144 -1 -1 3941 1;
+#X obj 115 52 vsl 15 128 0.01 1 1 0 empty kick_knob1 empty 0 -9 0 10
+-262144 -1 -1 12700 1;
+#X floatatom 228 342 5 0 0 1 pitch_scale - -;
+#X obj 228 93 vsl 15 128 0 1 0 0 empty kick_knob2 empty 0 -9 0 10 -262144
+-1 -1 12700 1;
 #X floatatom 419 311 5 0 0 1 sine_scale - -;
-#X obj 419 167 vsl 15 128 0 2 0 0 empty kick_sine empty 0 -9 0 10 -262144
--1 -1 6350 1;
+#X obj 419 62 vsl 15 128 0 1 0 0 empty kick_knob4 empty 0 -9 0 10 -262144
+-1 -1 12700 1;
 #X obj 88 388 *~ 0.25;
-#X obj 38 75 r kick;
+#X obj 3 28 r kick;
 #X floatatom 300 312 5 0 0 1 filter_scale - -;
-#X obj 300 168 vsl 15 128 0.1 3 0 0 empty kick_filter empty 0 -9 0
-10 -262144 -1 -1 6131 1;
+#X obj 300 63 vsl 15 128 0 1 0 0 empty kick_knob3 empty 0 -9 0 10 -262144
+-1 -1 12700 1;
 #X msg 527 291 \; kick_decay 250 \; kick_pitch 1 \; kick_filter 1.5
 \; kick_sine 1 \;;
 #X msg 674 289 \; kick_decay 150 \; kick_pitch 0.5 \; kick_filter 1.5
 \; kick_sine 1 \;;
 #X msg 524 363 \; kick_decay 450 \; kick_pitch 0.25 \; kick_filter
 0.5 \; kick_sine 1 \;;
-#X obj 674 102 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 674 144 s kick;
-#X obj 674 123 metro 450;
 #X msg 694 361 \; kick_decay 1500 \; kick_pitch 0.5 \; kick_filter
 0.5 \; kick_sine 0.5 \;;
 #X msg 520 432 \; kick_decay 50 \; kick_pitch 2.25 \; kick_filter 1.5
 \; kick_sine 0.8 \;;
-#X obj 107 74 inlet;
-#X obj 191 80 inlet;
-#X obj 301 83 inlet;
-#X obj 428 80 inlet;
-#X obj 443 126 * 2;
-#X obj 301 114 * 3;
-#X obj 199 116 * 3;
-#X obj 104 115 * 2000;
-#X obj 239 556 s~ l_sound_out;
-#X obj 364 554 s~ r_sound_out;
+#X obj 443 271 * 2;
+#X obj 301 259 * 3;
+#X obj 199 261 * 3;
+#X obj 104 260 * 2000;
+#X obj 4 63 t b f;
+#X obj 105 440 throw~ outL;
+#X obj 242 440 throw~ outR;
+#X obj 47 92 / 160;
+#X obj 64 131 / 3;
+#X obj 52 160 +;
+#X obj 62 182 * 3;
+#X floatatom 17 113 5 0 0 0 - - -;
 #X connect 0 0 8 0;
 #X connect 1 0 0 0;
 #X connect 2 0 0 1;
-#X connect 3 0 2 0;
+#X connect 3 0 20 0;
 #X connect 4 0 0 2;
-#X connect 5 0 4 0;
+#X connect 5 0 25 0;
+#X connect 5 0 19 0;
 #X connect 6 0 0 4;
-#X connect 7 0 6 0;
-#X connect 8 0 28 0;
-#X connect 8 0 29 0;
-#X connect 9 0 1 0;
+#X connect 7 0 17 0;
+#X connect 8 0 22 0;
+#X connect 8 0 23 0;
+#X connect 9 0 21 0;
 #X connect 10 0 0 3;
-#X connect 11 0 10 0;
-#X connect 15 0 17 0;
-#X connect 17 0 16 0;
-#X connect 20 0 27 0;
-#X connect 21 0 26 0;
-#X connect 22 0 25 0;
-#X connect 23 0 24 0;
-#X connect 24 0 7 0;
-#X connect 25 0 11 0;
-#X connect 26 0 5 0;
-#X connect 27 0 3 0;
+#X connect 11 0 18 0;
+#X connect 17 0 6 0;
+#X connect 18 0 10 0;
+#X connect 19 0 4 0;
+#X connect 20 0 2 0;
+#X connect 21 0 1 0;
+#X connect 21 1 24 0;
+#X connect 21 1 28 0;
+#X connect 24 0 26 0;
+#X connect 25 0 26 1;
+#X connect 26 0 27 0;
+#X connect 27 0 4 0;

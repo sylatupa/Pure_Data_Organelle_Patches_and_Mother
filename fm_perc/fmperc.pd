@@ -1,0 +1,398 @@
+#N canvas 321 209 1278 697 10;
+#X floatatom 16 186 5 0 0 0 - - #0-f1;
+#X obj 16 49 vsl 15 128 0 8000 0 0 empty \$0-f10 f1 0 -9 0 10 -262144
+-1 -1 9701 1;
+#X floatatom 51 186 5 0 0 0 - - #0-a1;
+#X obj 51 49 vsl 15 128 0 8000 0 0 empty \$0-a10 a1 0 -9 0 10 -262144
+-1 -1 11544 1;
+#X floatatom 86 186 5 0 0 0 - - #0-s1;
+#X obj 86 49 vsl 15 128 0 10 0 0 empty \$0-s10 s1 0 -9 0 10 -262144
+-1 -1 688 1;
+#X floatatom 121 186 5 0 0 0 - - #0-p1;
+#X obj 121 49 vsl 15 128 0 1 0 0 empty \$0-p10 p1 0 -9 0 10 -262144
+-1 -1 2531 1;
+#X obj 52 246 bng 15 250 50 0 \$0-prnd0 empty empty -45 5 0 10 -262144
+-1 -1;
+#X obj 118 355 array define -k \$0-fmperc 1024;
+#A 0 709.839 1354.49 1.89575 0.207764 394.043 4092.53 7.29279 0.451096
+890.503 3299.32 0.83252 0.771164 4599.12 2510.62 1.79108 0.36792 2298.22
+2878.54 4.79691 0.980255 2358.15 6144.78 7.33597 0.0558319 193.97 2.44141
+1.31073 0.130142 6636.84 5928.1 6.80832 0.949142 4200.32 4296.63 7.35748
+0.645187 5418.82 1299.32 0.227203 0.234528 5797.97 2016.48 4.44962
+0.413879 7258.3 50.1709 6.51474 0.706741 479.98 365.845 4.45267 0.504898
+1429.2 177.734 0.94986 0.96402 7391.48 5738.65 2.51266 0.316177 7497.44
+3195.68 5.53894 0.228317 863.647 4456.18 2.9155 0.0840912 1679.08 3972.29
+7.37793 0.725021 1187.13 4427.25 0.273743 0.0540771 7831.42 3068.36
+1.50055 0.220398 1361.33 5494.02 3.89481 0.823654 6630.86 1033.45 7.9837
+0.716324 5915.16 1501.59 6.95694 0.550064 502.93 370.361 3.74939 0.351379
+1334.47 1856.57 2.11639 0.480881 531.128 2080.69 3.85971 0.268173 4901.73
+429.443 5.93826 0.152237 7951.05 514.526 5.21027 0.63414 4960.33 303.345
+1.61133 0.069931 5147.71 1719.12 7.3233 0.562119 4406.13 1588.87 3.9119
+0.305573 618.774 1326.17 1.37177 0.246735 65.1855 635.864 9.24179 0.983078
+1511.72 5929.44 8.82751 0.641174 3416.5 5798.58 1.86752 0.322113 1315.67
+444.458 9.44931 0.453537 5613.4 7242.07 7.74094 0.435776 6691.04 2555.66
+6.10748 0.700455 6470.95 979.98 4.24561 0.681229 5614.75 7937.01 7.9985
+0.884552 67.8711 518.555 0.184631 0.786942 6526.98 7351.68 8.81546
+0.374832 5971.56 3236.21 1.79443 0.905182 5280.15 3253.42 2.4173 0.51799
+3800.66 4430.3 0.464172 0.56366 5865.84 995.605 4.31427 0.0353394 6473.51
+2784.06 5.27725 0.415573 246.582 1228.52 7.17178 0.47905 3748.29 7701.9
+8.59467 0.649399 951.538 115.234 1.87775 0.440109 6613.04 6138.06 9.0799
+0.94014 6831.3 978.882 1.27502 0.90155 2221.44 7181.03 1.0704 0.260727
+7377.44 764.893 5.57465 0.709244 529.053 6508.79 0.347595 0.0861206
+7404.17 144.531 1.00494 0.384872 2577.03 7425.9 2.54776 0.664215 6898.68
+3128.05 3.4639 0.241821 6956.91 4145.51 4.2131 0.483215 2388.31 7223.14
+7.71393 0.883469 4789.79 7555.66 8.013 0.911743 4064.09 1181.88 1.25259
+0.747269 1341.31 2473.63 5.77789 0.278503 449.585 533.936 4.00818 0.637833
+3017.7 1837.4 3.66333 0.403275 4981.93 1010.74 9.83261 0.0123901 6295.17
+528.32 2.23801 0.534378 793.457 3806.88 1.72516 0.712463 961.182 393.555
+6.36917 0.563614 1798.95 419.922 2.0433 0.091507 3643.68 3464.72 8.81531
+0.365601 3845.7 1626.71 0.215302 0.933472 5764.28 6269.78 1.21689 0.381851
+456.177 6612.79 8.81897 0.858185 5864.99 2777.1 7.56927 0.611893 5968.87
+1536.38 1.08994 0.901276 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#A 1000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#N canvas 735 305 450 505 guts 0;
+#X obj 80 -222 oscxx~;
+#X obj 210 -237 oscxx~;
+#X obj 175 -197 +~;
+#X obj 175 -9 *~;
+#X obj 237 -106 ar~;
+#X msg 287 -272 0;
+#X obj 153 -380 *~;
+#X obj 128 -326 +~;
+#X obj 231 -378 *~;
+#X obj 210 -326 +~;
+#X obj 174 21 hip~ 8000;
+#X obj 121 -409 r~ \$0-l;
+#X obj 220 -204 s~ \$0-l;
+#X obj 228 -161 r \$0-b;
+#X obj 290 -291 r \$0-b;
+#X obj 170 -409 r \$0-a1;
+#X obj 104 -264 r \$0-s1;
+#X obj 49 -263 r \$0-p1;
+#X obj 251 -409 r \$0-a2;
+#X obj 154 -351 r \$0-f1;
+#X obj 234 -351 r \$0-f2;
+#X obj 218 -299 r \$0-p2;
+#X obj 228 -277 r \$0-s2;
+#X obj 254 0 r \$0-hpf;
+#X obj 174 52 outlet~;
+#X obj 282 -228 r \$0-a;
+#X msg 282 -206 a \$1;
+#X msg 326 -207 r \$1;
+#X obj 326 -229 r \$0-r;
+#X obj 173 -151 *~ 0.5;
+#X obj 258 -65 vline~;
+#X obj 259 -92 r \$0-eg;
+#X msg 281 -151 a \$1;
+#X msg 331 -152 r \$1;
+#X obj 281 -174 r \$0-a0;
+#X obj 331 -174 r \$0-r0;
+#X obj 254 22 r \$0-hpf0;
+#X connect 0 0 2 0;
+#X connect 0 0 8 0;
+#X connect 1 0 2 1;
+#X connect 1 0 12 0;
+#X connect 2 0 29 0;
+#X connect 3 0 10 0;
+#X connect 4 0 3 1;
+#X connect 5 0 1 3;
+#X connect 5 0 0 3;
+#X connect 6 0 7 0;
+#X connect 7 0 0 0;
+#X connect 8 0 9 0;
+#X connect 9 0 1 0;
+#X connect 10 0 24 0;
+#X connect 11 0 6 0;
+#X connect 13 0 4 0;
+#X connect 14 0 5 0;
+#X connect 15 0 6 1;
+#X connect 16 0 0 2;
+#X connect 17 0 0 1;
+#X connect 18 0 8 1;
+#X connect 19 0 7 1;
+#X connect 20 0 9 1;
+#X connect 21 0 1 1;
+#X connect 22 0 1 2;
+#X connect 23 0 10 1;
+#X connect 25 0 26 0;
+#X connect 26 0 4 1;
+#X connect 27 0 4 1;
+#X connect 28 0 27 0;
+#X connect 29 0 3 0;
+#X connect 30 0 3 1;
+#X connect 31 0 30 0;
+#X connect 32 0 4 1;
+#X connect 33 0 4 1;
+#X connect 34 0 32 0;
+#X connect 35 0 33 0;
+#X connect 36 0 10 1;
+#X restore 59 332 pd guts;
+#X obj 59 354 outlet~;
+#X floatatom 156 186 5 0 0 0 - - #0-f2;
+#X obj 156 49 vsl 15 128 0 8000 0 0 empty \$0-f20 f2 0 -9 0 10 -262144
+-1 -1 4374 1;
+#X floatatom 191 186 5 0 0 0 - - #0-a2;
+#X obj 191 49 vsl 15 128 0 8000 0 0 empty \$0-a20 a2 0 -9 0 10 -262144
+-1 -1 6218 1;
+#X floatatom 226 186 5 0 0 0 - - #0-s2;
+#X obj 226 49 vsl 15 128 0 10 0 0 empty \$0-s20 s2 0 -9 0 10 -262144
+-1 -1 8061 1;
+#X floatatom 261 186 5 0 0 0 - - #0-p2;
+#X obj 261 49 vsl 15 128 0 1 0 0 empty \$0-p10 p2 0 -9 0 10 -262144
+-1 -1 2531 1;
+#X obj 16 211 bng 15 250 50 0 \$0-r1 empty RND -1 18 0 10 -262144 -1
+-1;
+#X obj 51 211 bng 15 250 50 0 \$0-r2 empty RND -1 17 0 10 -262144 -1
+-1;
+#X obj 86 211 bng 15 250 50 0 \$0-r3 empty RND -1 17 0 10 -262144 -1
+-1;
+#X obj 121 211 bng 15 250 50 0 \$0-r4 empty RND -1 17 0 10 -262144
+-1 -1;
+#X obj 156 211 bng 15 250 50 0 \$0-r5 empty RǸD -1 17 0 10 -262144
+-1 -1;
+#X obj 191 211 bng 15 250 50 0 \$0-r6 empty RND -1 17 0 10 -262144
+-1 -1;
+#X obj 226 211 bng 15 250 50 0 \$0-r7 empty RND -1 17 0 10 -262144
+-1 -1;
+#X obj 261 211 bng 15 250 50 0 \$0-r8 empty RND -1 17 0 10 -262144
+-1 -1;
+#X floatatom 120 246 5 0 0 0 Preset# #0-pld #0-pp;
+#X obj 191 247 bng 15 250 50 0 \$0-plb empty LOAD -27 5 0 10 -262144
+-1 -1;
+#X obj 262 246 bng 15 250 50 0 \$0-psb empty SAVE -27 5 0 10 -262144
+-1 -1;
+#X text 26 239 RND ALL, f 4;
+#N canvas 0 0 450 300 save 0;
+#X obj 218 122 pack f f f f f f f f;
+#X obj 198 149 list;
+#X obj 244 182 * 8;
+#X obj 190 228 array set \$0-fmperc;
+#X obj 132 92 t b b f;
+#X obj 112 56 r \$0-pst;
+#X obj 51 48 f;
+#X obj 170 58 r \$0-f1;
+#X obj 220 58 r \$0-a1;
+#X obj 269 58 r \$0-s1;
+#X obj 318 58 r \$0-p1;
+#X obj 367 58 r \$0-f2;
+#X obj 416 58 r \$0-a2;
+#X obj 466 58 r \$0-s2;
+#X obj 519 58 r \$0-p2;
+#X obj 76 11 r \$0-pp;
+#X obj 15 11 r \$0-psb;
+#X connect 0 0 1 1;
+#X connect 1 0 3 0;
+#X connect 2 0 3 1;
+#X connect 4 0 1 0;
+#X connect 4 1 0 0;
+#X connect 4 2 2 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 1;
+#X connect 9 0 0 2;
+#X connect 10 0 0 3;
+#X connect 11 0 0 4;
+#X connect 12 0 0 5;
+#X connect 13 0 0 6;
+#X connect 14 0 0 7;
+#X connect 15 0 6 1;
+#X connect 16 0 6 0;
+#X restore 117 333 pd save preset;
+#N canvas 0 55 1920 1005 ctrl 0;
+#X obj 41 287 rndF 8000;
+#X obj 99 213 unpack f f f f f f f f;
+#X obj 111 287 rndF 8000;
+#X obj 181 287 rndF 10;
+#X obj 251 288 rndF 1;
+#X obj 285 83 s \$0-b;
+#X obj 311 287 rndF 8000;
+#X obj 381 287 rndF 8000;
+#X obj 451 287 rndF 10;
+#X obj 521 288 rndF 1;
+#X obj 113 170 * 8;
+#X obj 125 99 s \$0-pld;
+#X obj 131 148 r \$0-pld;
+#X obj 100 190 array get \$0-fmperc 0 8;
+#X obj 202 102 s \$0-pst;
+#X floatatom 145 73 5 0 0 0 - - -;
+#X obj 226 82 s \$0-prnd;
+#X obj 260 103 s \$0-hpf;
+#X obj 332 81 s \$0-r;
+#X obj 322 105 s \$0-a;
+#X obj 35 324 s \$0-f10;
+#X obj 101 326 s \$0-a10;
+#X obj 172 327 s \$0-s10;
+#X obj 243 327 s \$0-p10;
+#X obj 305 324 s \$0-f20;
+#X obj 371 326 s \$0-a20;
+#X obj 443 327 s \$0-s20;
+#X obj 514 328 s \$0-p20;
+#X obj 42 262 r \$0-r1;
+#X obj 111 263 r \$0-r2;
+#X obj 182 261 r \$0-r3;
+#X obj 251 262 r \$0-r4;
+#X obj 315 254 r \$0-r5;
+#X obj 383 256 r \$0-r6;
+#X obj 454 254 r \$0-r7;
+#X obj 523 255 r \$0-r8;
+#X obj 240 63 r \$0-prnd0;
+#X obj 34 215 r \$0-prnd;
+#X obj 89 70 f;
+#X obj 36 40 r \$0-plb;
+#X obj 97 40 r \$0-pp;
+#X obj 175 8 inlet;
+#X obj 162 38 route pld pst prnd hpf bang a r f1 a1 s1 p1 f2 a2 s2
+p2 r1 r2 r3 r4 r5 r6 r7 r8, f 82;
+#X obj 622 85 s \$0-eg;
+#X connect 0 0 20 0;
+#X connect 1 0 20 0;
+#X connect 1 1 21 0;
+#X connect 1 2 22 0;
+#X connect 1 3 23 0;
+#X connect 1 4 24 0;
+#X connect 1 5 25 0;
+#X connect 1 6 26 0;
+#X connect 1 7 27 0;
+#X connect 2 0 21 0;
+#X connect 3 0 22 0;
+#X connect 4 0 23 0;
+#X connect 6 0 24 0;
+#X connect 7 0 25 0;
+#X connect 8 0 26 0;
+#X connect 9 0 27 0;
+#X connect 10 0 13 0;
+#X connect 12 0 10 0;
+#X connect 13 0 1 0;
+#X connect 15 0 11 0;
+#X connect 28 0 0 0;
+#X connect 29 0 2 0;
+#X connect 30 0 3 0;
+#X connect 31 0 4 0;
+#X connect 32 0 6 0;
+#X connect 33 0 7 0;
+#X connect 34 0 8 0;
+#X connect 35 0 9 0;
+#X connect 36 0 16 0;
+#X connect 37 0 0 0;
+#X connect 37 0 2 0;
+#X connect 37 0 3 0;
+#X connect 37 0 4 0;
+#X connect 37 0 6 0;
+#X connect 37 0 7 0;
+#X connect 37 0 8 0;
+#X connect 37 0 9 0;
+#X connect 38 0 11 0;
+#X connect 39 0 38 0;
+#X connect 40 0 38 1;
+#X connect 41 0 42 0;
+#X connect 42 0 15 0;
+#X connect 42 1 14 0;
+#X connect 42 2 16 0;
+#X connect 42 3 17 0;
+#X connect 42 4 5 0;
+#X connect 42 5 19 0;
+#X connect 42 6 18 0;
+#X connect 42 7 20 0;
+#X connect 42 8 21 0;
+#X connect 42 9 22 0;
+#X connect 42 10 23 0;
+#X connect 42 11 24 0;
+#X connect 42 12 25 0;
+#X connect 42 13 26 0;
+#X connect 42 14 27 0;
+#X connect 42 15 0 0;
+#X connect 42 16 2 0;
+#X connect 42 17 3 0;
+#X connect 42 18 4 0;
+#X connect 42 19 6 0;
+#X connect 42 20 7 0;
+#X connect 42 21 8 0;
+#X connect 42 22 9 0;
+#X connect 42 23 43 0;
+#X restore 5 354 pd ctrl;
+#X obj 5 332 inlet;
+#X text 13 274 --Controls below this comment are not saved--, f 46
+;
+#X floatatom 57 296 5 0 0 0 Attack #0-a #0-a0;
+#X floatatom 144 296 5 0 0 0 Release #0-r #0-r0;
+#X floatatom 260 296 5 0 0 0 HighpassFreq #0-hpf #0-hpf0;
+#X text 312 8 A simple but freaky lil fm-percussion generator \, constisting
+on two oscillators driving each other as mutual carriers / modulators.
+;
+#X text 310 329 Further controls affecting the sound \, but which are
+not saved in presets are attack \, release and Highpass frequency.
+these are abrevated a \, r and hpf;
+#X text 5 380 You can control all this shit with external messages
+hooked to the inlet. Examples: [a 25( will change the enevelopes attack
+time to 20ms. [s1 4( will change the shape of osc1's output. [p2 0(
+will set osc2s pulsewidth to equally balanced while [p1 0.5( will set
+osc1's pulsewidth ratio to 3 to 1, f 111;
+#X text 311 175 [pld ##( is especially useful for shifting between
+different sounds within a loop. Just make sure your envelope is short
+enough. You can play an entire spaceage percussion yard this way;
+#X text 6 432 In fact \, you can do away with the GUI entirely if you
+so wish. As long as you know how to run the beast with messages. Put
+it in a subpatch with one inlet and one outlet to keep the graphics
+from eating your precious CPU, f 112;
+#N canvas 0 0 450 300 init 0;
+#X obj -2 -5 loadbang;
+#X msg -5 19 \; \$0-a 1 \; \$0-r 200 \; \$0-hpf 8000 \; \$0-pld 0 \;
+;
+#X connect 0 0 1 0;
+#X restore 213 333 pd init;
+#X text 5 469 Finally \, there's a direct connection from the inlet
+to a vline~ object inside the guts. This allows you to create custom
+multistage envelopes by shoving a standard vline control message down
+the inlet with no prefix or anything-- it will cause immediate playback.
+BUT it goes without saying: Any messup in prefixes for control messages
+will go straight to the [vline~] object and wreck potential havoc!
+, f 112;
+#X text 311 238 As if it werent enough \, you can randomize the shit
+out of it by using the RND buttons (one for each control) or the RND
+ALL button. All controllable from outside as well. r1 \, r2 \, ...
+\, r8 control the individual randomization buttons. E.G: [r5( will
+randomize osc2's amplitude while [prnd( will randomize all 8 controls
+;
+#X text 312 59 The oscillators have 4 modulation inputs each: Frequency
+(in Hz) \, Amplitude (in Hz) \, Shape (0-10) and Pulsewidth (0-1).
+They are abrevated like this in both GUI and guts: f1 \, a1 \, s1 \,
+p1 \, f2 \, a2 \, s2 \, p2. These can all be stored or recalled using
+the LOAD/SAVE buttons or external messages. E.G: [pld 8( will load
+preset #8 and [pst 47( will save the current state to preset #47.There
+are 1024/8=128 presets to have fun with. I've saved a bunch on the
+first 37 or so.;
+#X obj 768 254 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X connect 1 0 0 0;
+#X connect 3 0 2 0;
+#X connect 5 0 4 0;
+#X connect 7 0 6 0;
+#X connect 10 0 11 0;
+#X connect 13 0 12 0;
+#X connect 15 0 14 0;
+#X connect 17 0 16 0;
+#X connect 19 0 18 0;
+#X connect 34 0 33 0;
+#X connect 48 0 33 0;
+#X coords 0 -1 1 1 300 320 1 0 0;

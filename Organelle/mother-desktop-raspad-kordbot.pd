@@ -266,7 +266,7 @@ loud. Also sends values to the Organelle's OLED VU meter.;
 #X obj 133 740 metro 400;
 #X obj 3 -2 cnv 15 785 600 empty empty empty 20 12 0 14 -128992 -66577
 0;
-#X obj 47 239 tgl 50 0 kcs kcs empty 17 7 0 10 -33289 -262144 -1 1
+#X obj 47 239 tgl 50 0 kcs kcs empty 17 7 0 10 -33289 -262144 -1 0
 1;
 #X obj 10 19 vsl 40 150 0 1 0 0 knob1 knob1 k1 0 -9 0 22 -66577 -262144
 -4160 13410 0;
@@ -279,11 +279,11 @@ loud. Also sends values to the Organelle's OLED VU meter.;
 #X obj 164 190 tgl 25 0 send-all-vals empty reset 0 0 0 22 -262144
 -1 -4160 0 1;
 #X obj 90 191 tgl 25 0 fs fs foot 0 0 0 22 -66577 -262144 -1 0 1;
-#X obj 101 239 tgl 50 0 kds kds empty 17 7 0 10 -33289 -262144 -1 1
+#X obj 101 239 tgl 50 0 kds kds empty 17 7 0 10 -33289 -262144 -1 0
 1;
-#X obj 201 239 tgl 50 0 kfs kfs empty 17 7 0 10 -33289 -262144 -1 1
+#X obj 201 239 tgl 50 0 kfs kfs empty 17 7 0 10 -33289 -262144 -1 0
 1;
-#X obj 253 239 tgl 50 0 kgs kgs empty 17 7 0 10 -33289 -262144 -1 1
+#X obj 253 239 tgl 50 0 kgs kgs empty 17 7 0 10 -33289 -262144 -1 0
 1;
 #X obj 305 239 tgl 50 0 kas kas empty 17 7 0 10 -33289 -262144 -1 0
 1;
@@ -1094,13 +1094,13 @@ loud. Also sends values to the Organelle's OLED VU meter.;
 ;
 #X obj 370 69 tgl 50 0 empty kdsv empty 17 7 0 10 -33289 -262144 -1
 0 1;
-#X obj 393 123 tgl 50 0 empty kev empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 393 123 tgl 50 0 empty kev empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 446 123 tgl 50 0 empty kfv empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 471 69 tgl 50 0 empty kfsv empty 17 7 0 10 -33289 -262144 -1
 0 1;
-#X obj 499 123 tgl 50 0 empty kgv empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 499 123 tgl 50 0 empty kgv empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 524 69 tgl 50 0 empty kgsv empty 17 7 0 10 -33289 -262144 -1
 0 1;
@@ -1130,26 +1130,26 @@ loud. Also sends values to the Organelle's OLED VU meter.;
 #X restore 472 14 graph;
 #X obj 20 188 tgl 25 0 aux aux aux 0 0 0 22 -262144 -1 -4160 0 1;
 #X obj 72 292 tgl 50 0 kd kd empty 17 7 0 10 -262144 -1 -1 0 1;
-#X obj 124 292 tgl 50 0 ke ke empty 17 7 0 10 -262144 -1 -1 1 1;
+#X obj 124 292 tgl 50 0 ke ke empty 17 7 0 10 -262144 -1 -1 0 1;
 #X obj 176 292 tgl 50 0 kf kf empty 17 7 0 10 -262144 -1 -1 0 1;
 #X obj 228 292 tgl 50 0 kg kg empty 17 7 0 10 -262144 -1 -1 0 1;
-#X obj 280 292 tgl 50 0 ka ka empty 17 7 0 10 -262144 -1 -1 1 1;
+#X obj 280 292 tgl 50 0 ka ka empty 17 7 0 10 -262144 -1 -1 0 1;
 #X obj 332 292 tgl 50 0 kb kb empty 17 7 0 10 -262144 -33289 -1 0 1
 ;
 #X obj 384 292 tgl 50 0 key13 key13 empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 436 292 tgl 50 0 key15 key15 empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 488 292 tgl 50 0 key17 key17 empty 17 7 0 10 -262144 -1 -1 1
+#X obj 488 292 tgl 50 0 key17 key17 empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 540 292 tgl 50 0 key18 key18 empty 17 7 0 10 -262144 -1 -1 1
+#X obj 540 292 tgl 50 0 key18 key18 empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 592 292 tgl 50 0 key20 key20 empty 17 7 0 10 -262144 -1 -1 1
+#X obj 592 292 tgl 50 0 key20 key20 empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 644 292 tgl 50 0 key22 key22 empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 696 292 tgl 50 0 key24 key24 empty 17 7 0 10 -262144 -33289
--1 1 1;
+-1 0 1;
 #X msg 11 381 ~/GIT_LOCAL_WORKING/A_PURE_DATA/Patches/Pow_Pows_Polybeats
 , f 67;
 #X msg 9 431 0;
@@ -1417,7 +1417,7 @@ root is major;
 #X coords 0 0 1 1 85 60 0;
 #X restore 488 606 pd music_scales;
 #X obj 960 753 r index;
-#N canvas 194 151 1533 813 move_through_files 1;
+#N canvas 194 151 1533 813 move_through_files 0;
 #X msg 88 652 \; pd-main.pd menuclose \;;
 #X obj 67 143 ggee/shell;
 #X obj 67 77 r keyapost;

@@ -1,9 +1,6 @@
 #N canvas 0 55 1920 1005 10;
-#X obj 108 152 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 108 312 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 195 214 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X floatatom 241 207 5 0 0 0 - - -;
 #N canvas 725 337 470 441 tr808-clap 0;
 #X obj 79 265 inlet;
 #X obj 70 121 noise~;
@@ -187,67 +184,55 @@
 #X connect 12 0 11 2;
 #X connect 13 0 5 0;
 #X connect 14 0 8 0;
-#X restore 110 174 pd tr808-clap;
+#X restore 117 331 pd tr808-clap;
 #X f 62;
-#X obj 128 60 hsl 128 15 50 5000 1 0 empty tr808cp_cutoff empty -2
--8 0 10 -262144 -1 -1 12750 1;
-#X obj 287 57 hsl 128 15 50 5000 1 0 empty tr808cp_width empty -2 -8
-0 10 -262144 -1 -1 12700 1;
-#X obj 588 51 hsl 128 15 1 50 1 0 empty tr808cp_decay empty -2 -8 0
-10 -262144 -1 -1 12750 1;
-#X obj 439 56 hsl 128 15 2 40 1 0 empty tr808cp_delay empty -2 -8 0
-10 -262144 -1 -1 12750 1;
-#X floatatom 124 80 5 0 0 1 cutoff - -;
-#X floatatom 286 77 5 0 0 1 width - -;
-#X floatatom 436 76 5 0 0 1 delay - -;
-#X floatatom 585 71 5 0 0 1 decay - -;
-#X msg 306 199 \; tr808cp_cutoff 750 \; tr808cp_width 1000 \; tr808cp_delay
+#X obj 128 135 hsl 128 15 0.01 1 1 0 empty clap_knob1 empty -2 -8 0
+10 -262144 -1 -1 0 1;
+#X obj 287 122 hsl 128 15 0.01 1 1 0 empty clap_knob2 empty -2 -8 0
+10 -262144 -1 -1 0 1;
+#X obj 588 126 hsl 128 15 0.01 1 1 0 empty clap_knob4 empty -2 -8 0
+10 -262144 -1 -1 0 1;
+#X obj 439 131 hsl 128 15 0.01 1 1 0 empty clap_knob3 empty -2 -8 0
+10 -262144 -1 -1 0 1;
+#X floatatom 124 240 5 0 0 1 cutoff - -;
+#X floatatom 331 252 5 0 0 1 width - -;
+#X floatatom 436 236 5 0 0 1 delay - -;
+#X floatatom 585 231 5 0 0 1 decay - -;
+#X msg 306 359 \; tr808cp_cutoff 750 \; tr808cp_width 1000 \; tr808cp_delay
 11 \; tr808cp_decay 3.5 \;;
-#X msg 304 262 \; tr808cp_cutoff 800 \; tr808cp_width 1500 \; tr808cp_delay
+#X msg 304 422 \; tr808cp_cutoff 800 \; tr808cp_width 1500 \; tr808cp_delay
 8 \; tr808cp_decay 3.5 \;;
-#X msg 438 263 \; tr808cp_cutoff 1600 \; tr808cp_width 600 \; tr808cp_delay
+#X msg 438 423 \; tr808cp_cutoff 1600 \; tr808cp_width 600 \; tr808cp_delay
 18 \; tr808cp_decay 5.5 \;;
-#X msg 439 198 \; tr808cp_cutoff 1250 \; tr808cp_width 500 \; tr808cp_delay
+#X msg 439 358 \; tr808cp_cutoff 1250 \; tr808cp_width 500 \; tr808cp_delay
 14 \; tr808cp_decay 4.5 \;;
-#X obj 108 129 r clap;
-#X obj 194 295 s clap;
-#X obj 111 234 dac~;
-#X obj 195 235 metro 150;
-#X obj 195 256 random 2;
-#X obj 196 276 sel 1;
-#X obj 111 214 *~ 1;
-#X obj 528 176 loadbang;
-#X obj 109 5 inlet;
-#X obj 295 6 inlet;
-#X obj 293 25 * 5000;
-#X obj 108 34 * 5000;
-#X obj 436 11 inlet;
-#X obj 434 30 * 40;
-#X obj 583 5 inlet;
-#X obj 581 26 * 50;
-#X connect 0 0 3 0;
-#X connect 1 0 19 0;
-#X connect 2 0 19 1;
-#X connect 3 0 22 0;
-#X connect 4 0 8 0;
-#X connect 5 0 9 0;
-#X connect 6 0 11 0;
-#X connect 7 0 10 0;
-#X connect 8 0 3 1;
-#X connect 9 0 3 2;
-#X connect 10 0 3 3;
-#X connect 11 0 3 4;
-#X connect 16 0 0 0;
-#X connect 19 0 20 0;
-#X connect 20 0 21 0;
-#X connect 21 0 17 0;
-#X connect 22 0 18 0;
-#X connect 22 0 18 1;
-#X connect 23 0 15 0;
-#X connect 24 0 27 0;
-#X connect 25 0 26 0;
-#X connect 26 0 9 0;
-#X connect 27 0 8 0;
-#X connect 28 0 29 0;
-#X connect 29 0 10 0;
-#X connect 30 0 31 0;
+#X obj 29 22 r clap;
+#X obj 528 336 loadbang;
+#X obj 108 209 * 5000;
+#X obj 434 205 * 40;
+#X obj 581 201 * 50;
+#X obj 23 57 t b f;
+#X obj 40 379 throw~ outL;
+#X obj 117 379 throw~ outR;
+#X obj 67 71 / 160;
+#X obj 283 150 * 5000;
+#X connect 0 0 1 0;
+#X connect 1 0 20 0;
+#X connect 1 0 21 0;
+#X connect 2 0 16 0;
+#X connect 3 0 23 0;
+#X connect 4 0 18 0;
+#X connect 5 0 17 0;
+#X connect 6 0 1 1;
+#X connect 7 0 1 2;
+#X connect 8 0 1 3;
+#X connect 9 0 1 4;
+#X connect 14 0 19 0;
+#X connect 15 0 13 0;
+#X connect 16 0 6 0;
+#X connect 17 0 8 0;
+#X connect 18 0 9 0;
+#X connect 19 0 0 0;
+#X connect 19 1 22 0;
+#X connect 22 0 2 0;
+#X connect 23 0 7 0;
