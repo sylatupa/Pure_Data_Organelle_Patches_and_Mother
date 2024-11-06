@@ -1,0 +1,3 @@
+#N canvas 32 32 450 300 12;
+#X msg 109 146 \; pd dsp 1 \;;
+#X msg 28 63 \; pd testD obj 2 3 moses 1 \;;
